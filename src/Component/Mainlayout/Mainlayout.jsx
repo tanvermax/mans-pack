@@ -8,6 +8,7 @@ import Ourservice from '../Ourservice/Ourservice';
 import Mothercompany from '../Mothercompany/Mothercompany';
 import Amessage from '../Amessage/Amessage';
 import Ourclient from '../Ourclient/Ourclient';
+import Footer from '../Footer/Footer';
 
 const Mainlayout = () => {
     return (
@@ -20,7 +21,7 @@ const Mainlayout = () => {
             <Ourservice></Ourservice>
             <Amessage></Amessage>
             <Ourclient></Ourclient>
-            
+            <Footer></Footer>
             {/* <Mothercompany></Mothercompany> */}
         </div>
     );

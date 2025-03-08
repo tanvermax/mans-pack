@@ -26,12 +26,12 @@ const Amessage = () => {
                             src={photo}
                             className="mx-auto size-50 rounded-full shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]"
                         />
-                        <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                            <div className="font-semibold text-gray-900">Minhazur Rahman</div>
+                        <div className="mt-4 flex items-center justify-center space-x-3 ">
+                            <div className="font-semibold lg:text-base text-xs text-gray-900">Minhazur Rahman</div>
                             <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
                                 <circle r={1} cx={1} cy={1} />
                             </svg>
-                            <div className="text-gray-600">CEO of MANS Packaging</div>
+                            <div className="text-gray-600 lg:text-base text-xs">CEO of MANS Packaging</div>
                         </div>
                     </figcaption>
                 </figure>

@@ -34,9 +34,9 @@ const Ourservice = () => {
     return (
         <div className='bg-gray-100'>
             <div className='w-11/12 mx-auto place-items-center py-10'>
-            <h2 className='lg:text-5xl text-xl font-bold lg:py-4'>Our Service</h2>
+            <h2 className='lg:text-5xl md:text-3xl text-xl font-bold lg:py-4'>Our Service</h2>
             <p className='lg:text-xl text-xs text-gray-700 pb-10'>Packaging We Offer</p>
-            <div className='grid lg:grid-cols-4 '>
+            <div className='grid lg:grid-cols-4 md:grid-cols-2 '>
                 {
                     data.map(d => <div key={d.id} className='place-content-center place-items-center p-5'>
                         <img className='lg:w-[310px] w-[210px] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]' src={d.service} alt="" />
