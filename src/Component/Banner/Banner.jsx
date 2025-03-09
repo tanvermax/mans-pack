@@ -45,8 +45,8 @@ const Banner = () => {
             <div className="relative  lg:h-[500px]">
               <img src={slide.image} alt={slide.heading} className="w-full h-full object-cover" />
               <div className="absolute inset-0 flex flex-col items-center justify-center  bg-opacity-50 text-white p-4">
-                <h2 className="lg:text-6xl font-bold">{slide.heading}</h2>
-                <p className="mt-2 lg:text-2xl text-xs text-center">{slide.description}</p>
+                <h2 className="lg:text-6xl md:text-3xl font-bold">{slide.heading}</h2>
+                <p className="mt-2 lg:text-2xl md:text-xl text-xs text-center">{slide.description}</p>
               </div>
             </div>
           </SwiperSlide>

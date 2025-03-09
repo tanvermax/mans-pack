@@ -1,4 +1,5 @@
 import React from "react";
+import Map from "../../Component/Aboutus/Map";
 
 const Contact = () => {
   return (
@@ -150,6 +151,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <Map></Map>
     </div>
   );
 };

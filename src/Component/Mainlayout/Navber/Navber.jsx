@@ -41,7 +41,7 @@ const Navber = () => {
             <div className="border-b-[1px] ">
                 <div className="">
 
-                    <ul className="lg:text-[15px] text-[6px] flex lg:gap-10 gap-1 justify-center lg:py-2 py-1 items-center w-11/12 mx-auto">
+                    <ul className="lg:text-[15px] md:text-[10px] text-[6px] flex lg:gap-10 gap-1 md:gap-10 justify-center lg:py-2 py-1 items-center w-11/12 mx-auto">
                         <li> +8801787-108216</li>
                         <li>contact:@manspackaging.com</li>
                         <li>Sonir Akhra, Jatrabari, Dhaka</li>

@@ -6,6 +6,7 @@ import photo4 from "./../../assets/mans-printing-and-packaging.jpg"
 
 const Aboutus = () => {
     return (
+        <>
         <div className='lg:flex lg:py-10 w-10/12 mx-auto'>
             <div className='grid grid-cols-2 lg:gap-5 gap-2 lg:p-10'>
                 <img className='shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] rounded-2xl' src={photo1} alt="" />
@@ -20,6 +21,8 @@ const Aboutus = () => {
                     <br /> <br /> Established in 2020, we are a young and ambitious company with a passion for innovation and excellence. we offer a wide range of carton box packaging solutions for e-commerce, food, and industrial applications. <br /> <br />As a carton box manufacturing company, we are provider of customized, sustainable, and high-quality packaging solutions and dedicated to serving businesses of all sizes in Dhaka and beyond. And we pride ourselves on our ability to provide fast and reliable service to our clients. </p>
             </div>
         </div>
+        
+        </>
     );
 };
 
