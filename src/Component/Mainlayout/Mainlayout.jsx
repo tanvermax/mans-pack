@@ -9,18 +9,15 @@ import Mothercompany from '../Mothercompany/Mothercompany';
 import Amessage from '../Amessage/Amessage';
 import Ourclient from '../Ourclient/Ourclient';
 import Footer from '../Footer/Footer';
+import { Outlet } from 'react-router-dom';
 
 const Mainlayout = () => {
     return (
         <div>
             <Navber></Navber>
-            <Banner></Banner>
-            <Section1></Section1>
-            {/* <Section2></Section2> */}
-            <Aboutus></Aboutus>
-            <Ourservice></Ourservice>
-            <Amessage></Amessage>
-            <Ourclient></Ourclient>
+            <div className='min-h-[70vh]'>
+            <Outlet></Outlet>
+            </div>
             <Footer></Footer>
             {/* <Mothercompany></Mothercompany> */}
         </div>

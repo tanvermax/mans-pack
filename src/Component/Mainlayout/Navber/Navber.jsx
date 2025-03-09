@@ -14,12 +14,13 @@ const Navber = () => {
     const navber = (
         <>
             <ul className="menu menu-horizontal px-1 z-10">
-                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><a className="hover:bg-white"> Home</a></li>
+                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/"} className="hover:bg-white"> Home</Link></li>
                 <li>
                     <details>
                         <summary>Service</summary>
-                        <ul className="p-2">
-                            <li><a>E-commerce Packaging</a></li>
+                        <ul className="p-2 lg:w-[250px]">
+                            <Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link>
+                            {/* <li><a></a></li> */}
                             <li><a>Industrial Packaging</a></li>
                             <li><a>Food Packaging</a></li>
                             <li><a>Garments Packaging</a></li>
@@ -27,10 +28,11 @@ const Navber = () => {
                     </details>
                 </li>
                 <li><a>Portfolio</a></li>
-                <li><a>Contact Us</a></li>
-                <li><a>About Us</a></li>
-                <li><a>Knowledge</a></li>
-                <li><a>Enquiry Cart</a></li>
+                <li><a><Link to={"/contactus"}>Contact Us</Link></a></li>
+                <li><a><Link to={"/aboutus"}>About Us</Link></a></li>
+                <li><a><Link to={"/aboutus"}>Knowledge</Link></a></li>
+                <li><a><Link to={"/aboutus"}>Enquiry Cart</Link></a></li>
+                
             </ul></>
     )
 
@@ -54,7 +56,7 @@ const Navber = () => {
 
 
 
-            <div className="navbar justify-between   w-11/12 mx-auto">
+            <div className=" navbar  justify-between   w-11/12 mx-auto">
                 <div className="navbar-start">
 
                     <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -85,7 +87,7 @@ const Navber = () => {
                                 <summary>Service
                                 </summary>
                                 <ul className="p-2">
-                                    <li><a>E-commerce Packaging</a></li>
+                                <Link  to={"/e-commerce-packaging"}>E-commerce Packaging</Link>
                                     <li><a>Industrial Packaging</a></li>
                                     <li><a>Food Packaging</a></li>
                                     <li><a>Garments Packaging</a></li>
@@ -94,7 +96,7 @@ const Navber = () => {
                             </details>
                         </li>
                         <li><a>Portfolio</a></li>
-                        <li><a>Contact Us</a></li>
+                        <li><a><Link to={"/contactus"}>Contact Us</Link></a></li>
                         <li><a>About Us</a></li>
                         <li><a>Knowledge</a></li>
                         <li><a>Enquiry Cart</a></li>
