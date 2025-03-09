@@ -4,6 +4,7 @@ import Home from "../Component/Mainlayout/Home";
 import Ecom from "../Pages/Service/Ecom";
 import Contact from "../Pages/Contact/Contact";
 import Aboutus from "../Pages/AboutUs/Aboutus";
+import Industrial from "../Pages/Service/Industrialpack/Industrial";
 
 export const Routs= createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const Routs= createBrowserRouter([
             {
                 path:"aboutus",
                 element:<Aboutus></Aboutus>
+            },
+            {
+                path:"industrial",
+                element:<Industrial></Industrial>
             }
         ]
     }

@@ -38,8 +38,8 @@ const Ourservice = () => {
             <p className='lg:text-xl text-xs text-gray-700 pb-10'>Packaging We Offer</p>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 '>
                 {
-                    data.map(d => <div key={d.id} className='place-content-center place-items-center p-5'>
-                        <img className='lg:w-[310px] w-[210px] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]' src={d.service} alt="" />
+                    data.map(d => <div key={d.id} className=' place-content-center place-items-center p-5'>
+                        <img className='rounded-xl p-1 lg:w-[310px] w-[210px] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]' src={d.service} alt="" />
                         <h3 className='lg:py-5 py-3 lg:text-2xl font-semibold'>{d.heading}</h3>
                         <p className='text-center text-xs lg:text-base text-gray-600'>{d.descritpion}</p>
 

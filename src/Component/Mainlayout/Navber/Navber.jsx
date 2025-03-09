@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import logo from "./../../../assets/manspackaginglogo.png"
 import { FaChevronDown, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { BsChevronBarContract, BsLayoutSidebarReverse } from "react-icons/bs";
@@ -8,31 +8,31 @@ import { Link } from "react-router-dom";
 import { CiInstagram } from "react-icons/ci";
 
 const Navber = () => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navber = (
         <>
-            <ul className="menu menu-horizontal px-1 z-10">
+            <ul className="menu menu-horizontal px-1 z-10 gap-10 text-base ">
                 <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/"} className="hover:bg-white"> Home</Link></li>
-                <li>
+                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] ">
                     <details>
                         <summary>Service</summary>
                         <ul className="p-2 lg:w-[250px]">
-                            <Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link>
+                            <li><Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link></li>
                             {/* <li><a></a></li> */}
-                            <li><a>Industrial Packaging</a></li>
-                            <li><a>Food Packaging</a></li>
-                            <li><a>Garments Packaging</a></li>
+                            <li><Link to={"/industrial"}>Industrial Packaging</Link></li>
+                            <li><Link>Food Packaging</Link></li>
+                            <li><Link>Garments Packaging</Link></li>
                         </ul>
                     </details>
                 </li>
-                <li><a>Portfolio</a></li>
-                <li><a><Link to={"/contactus"}>Contact Us</Link></a></li>
-                <li><a><Link to={"/aboutus"}>About Us</Link></a></li>
-                <li><a><Link to={"/aboutus"}>Knowledge</Link></a></li>
-                <li><a><Link to={"/aboutus"}>Enquiry Cart</Link></a></li>
-                
+                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link>Portfolio</Link></li>
+                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/contactus"}>Contact Us</Link></li>
+                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/aboutus"}>About Us</Link></li>
+                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/aboutus"}>Knowledge</Link></li>
+                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/aboutus"}>Enquiry Cart</Link></li>
+
             </ul></>
     )
 
@@ -87,19 +87,19 @@ const Navber = () => {
                                 <summary>Service
                                 </summary>
                                 <ul className="p-2">
-                                <Link  to={"/e-commerce-packaging"}>E-commerce Packaging</Link>
-                                    <li><a>Industrial Packaging</a></li>
-                                    <li><a>Food Packaging</a></li>
-                                    <li><a>Garments Packaging</a></li>
+                                    <li><Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link></li>
+                                    <li><Link>Industrial Packaging</Link></li>
+                                    <li><Link>Food Packaging</Link></li>
+                                    <li><Link>Garments Packaging</Link></li>
                                     {/* <li><a>Industrial Packaging</a></li> */}
                                 </ul>
                             </details>
                         </li>
-                        <li><a>Portfolio</a></li>
-                        <li><a><Link to={"/contactus"}>Contact Us</Link></a></li>
-                        <li><a>About Us</a></li>
-                        <li><a>Knowledge</a></li>
-                        <li><a>Enquiry Cart</a></li>
+                        <li><Link>Portfolio</Link></li>
+                        <li><Link to={"/contactus"}>Contact Us</Link></li>
+                        <li><Link to={"/aboutus"}>About Us</Link></li>
+                        <li><Link>Knowledge</Link></li>
+                        <li><Link>Enquiry Cart</Link></li>
                     </ul>
                 </div>
             </div>
@@ -107,7 +107,7 @@ const Navber = () => {
 
             {/* old */}
 
-            
+
         </>
     );
 };
