@@ -10,6 +10,7 @@ import Amessage from '../Amessage/Amessage';
 import Ourclient from '../Ourclient/Ourclient';
 import Footer from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
+import FloatingChat from './FloatingChat';
 
 const Mainlayout = () => {
     return (
@@ -18,6 +19,7 @@ const Mainlayout = () => {
             <div className='min-h-[70vh]'>
             <Outlet></Outlet>
             </div>
+            <FloatingChat></FloatingChat>
             <Footer></Footer>
             {/* <Mothercompany></Mothercompany> */}
         </div>
