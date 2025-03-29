@@ -1,15 +1,16 @@
 // import React, { useState } from "react";
 import logo from "./../../../assets/manspackaginglogo.png"
 import { FaChevronDown, FaFacebook, FaLinkedin } from "react-icons/fa";
-import { BsChevronBarContract, BsLayoutSidebarReverse } from "react-icons/bs";
-import { HiMiniBarsArrowUp } from "react-icons/hi2";
-import { VscThreeBars } from "react-icons/vsc";
+// import { BsChevronBarContract, BsLayoutSidebarReverse } from "react-icons/bs";
+// import { HiMiniBarsArrowUp } from "react-icons/hi2";
+// import { VscThreeBars } from "react-icons/vsc";
 import { Link } from "react-router-dom";
 import { CiInstagram } from "react-icons/ci";
 
 const Navber = () => {
-    // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+
+
 
     const navber = (
         <>
@@ -32,7 +33,10 @@ const Navber = () => {
                 <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/aboutus"}>About Us</Link></li>
                 <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/aboutus"}>Knowledge</Link></li>
                 <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/aboutus"}>Enquiry Cart</Link></li>
-
+                <div className="flex gap-2 ">
+                    <Link to={"/signup"} className="btn">SignUp</Link>
+                    <Link to={"/login"} className="btn">Login</Link>
+                </div>
             </ul></>
     )
 
@@ -100,6 +104,10 @@ const Navber = () => {
                         <li><Link to={"/aboutus"}>About Us</Link></li>
                         <li><Link>Knowledge</Link></li>
                         <li><Link>Enquiry Cart</Link></li>
+                        <div className="flex gap-2 ">
+                        <Link to={"/signup"} className="btn">SignUp</Link>
+                        <Link to={"/login"} className="btn">Login</Link>
+                        </div>
                     </ul>
                 </div>
             </div>

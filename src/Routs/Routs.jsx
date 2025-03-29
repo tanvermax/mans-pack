@@ -5,33 +5,62 @@ import Ecom from "../Pages/Service/Ecom";
 import Contact from "../Pages/Contact/Contact";
 import Aboutus from "../Pages/AboutUs/Aboutus";
 import Industrial from "../Pages/Service/Industrialpack/Industrial";
+import ErrorPage from "../Component/Mainlayout/ErrorPage";
+import Dashbord from "../Admin/Dashbord/Dashbord";
+import ItemDetails from "../Admin/Itemdetails/ItemDetails";
+import Login from "../Component/Authentication/Login";
+import Signup from "../Component/Authentication/Signup";
 
-export const Routs= createBrowserRouter([
+export const Routs = createBrowserRouter([
     {
-        path:"/",
+        path: "/",
         element: <Mainlayout></Mainlayout>,
-        children:[{
-            path:"/",
-            element:<Home></Home>
-        },
+        children: [
             {
-                path:"e-commerce-packaging",
-                element:<Ecom></Ecom>,
+                path: "dashboard",
+                element: <Dashbord></Dashbord>,
+                children: [
+                    {
+                        path: 'itemdetails',
+                        element: <ItemDetails></ItemDetails>
+                    }
+                ]
+            }, {
+                path: "/",
+                element: <Home></Home>,
+                errorElement: <ErrorPage></ErrorPage>
+            },
+            {
+                path: "e-commerce-packaging",
+                element: <Ecom></Ecom>,
+                errorElement: <ErrorPage></ErrorPage>
 
             },
             {
-                path:"contactus",
-                element:<Contact></Contact>
+                path: "contactus",
+                element: <Contact></Contact>,
+                errorElement: <ErrorPage></ErrorPage>
             },
 
             {
-                path:"aboutus",
-                element:<Aboutus></Aboutus>
+                path: "aboutus",
+                element: <Aboutus></Aboutus>,
+                errorElement: <ErrorPage></ErrorPage>
             },
             {
-                path:"industrial",
-                element:<Industrial></Industrial>
+                path: "industrial",
+                element: <Industrial></Industrial>,
+                errorElement: <ErrorPage></ErrorPage>
+            },
+            {
+                path:"login",
+                element:<Login></Login>
+            },
+            {
+                path:"signup",
+                element:<Signup></Signup>
             }
-        ]
+        ],
+        errorElement: <ErrorPage></ErrorPage>
     }
 ])

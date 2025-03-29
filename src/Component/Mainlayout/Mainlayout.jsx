@@ -11,16 +11,19 @@ import Ourclient from '../Ourclient/Ourclient';
 import Footer from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
 import FloatingChat from './FloatingChat';
+import { ToastContainer } from 'react-toastify';
 
 const Mainlayout = () => {
+    const nodeaderfooter = location.pathname.includes('dashboard')
     return (
         <div>
-            <Navber></Navber>
+            <ToastContainer></ToastContainer>
+            {nodeaderfooter || <Navber></Navber>}
             <div className='min-h-[70vh]'>
             <Outlet></Outlet>
             </div>
             <FloatingChat></FloatingChat>
-            <Footer></Footer>
+           {nodeaderfooter ||  <Footer></Footer>}
             {/* <Mothercompany></Mothercompany> */}
         </div>
     );
