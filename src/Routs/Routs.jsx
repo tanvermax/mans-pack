@@ -10,6 +10,8 @@ import Dashbord from "../Admin/Dashbord/Dashbord";
 import ItemDetails from "../Admin/Itemdetails/ItemDetails";
 import Login from "../Component/Authentication/Login";
 import Signup from "../Component/Authentication/Signup";
+import UserDetails from "../Admin/UserDetails/UserDetails";
+import SalesAnalytics from "../Admin/SalesAnalytics/SalesAnalytics";
 
 export const Routs = createBrowserRouter([
     {
@@ -23,6 +25,14 @@ export const Routs = createBrowserRouter([
                     {
                         path: 'itemdetails',
                         element: <ItemDetails></ItemDetails>
+                    },
+                    {
+                        path:"userdetails",
+                        element: <UserDetails></UserDetails>
+                    },
+                    {
+                        path:"sales",
+                        element:<SalesAnalytics></SalesAnalytics>
                     }
                 ]
             }, {

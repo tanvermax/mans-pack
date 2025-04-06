@@ -34,8 +34,8 @@ const Section1 = () => {
         <div className='grid lg:grid-cols-4 grid-cols-2 gap-5 w-11/12 mx-auto lg:py-20 py-5'>
             {
 
-                data.map(d =>
-                    <div className='border-[1px] border-blue-400 rounded-md text-center lg:space-y-3.5  space-y-1 p-3 shadow-2xl'>
+                data.map((d, index) =>
+                    <div key={index} className='border-[1px] border-blue-400 rounded-md text-center lg:space-y-3.5  space-y-1 p-3 shadow-2xl'>
                         <div className='lg:text-5xl text-3xl place-items-center text-[#e69f06] '>{d.icone}</div>
                         <h1 className='text-[10px] lg:text-2xl'>{d.heading}</h1>
                         <p className='text-[8px] lg:text-xl' >{d.description}</p>

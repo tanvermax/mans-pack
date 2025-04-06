@@ -8,14 +8,14 @@ const Dashbord = () => {
         <div className=' bg-[#F8F9FA] text-center'>
             
             <div className='grid grid-cols-12 '>
-                <div className='col-span-4 '>
+                <div className='col-span-2 '>
                     <Dashitem></Dashitem>
                 </div>
-                <div className='col-span-8'>
+                <div className='col-span-10 bg-gray-400'>
                     {/* <ItemDetails></ItemDetails> */}
                     
                     <Outlet></Outlet>
-                </div>
+                </div> 
             </div>
         </div>
     );

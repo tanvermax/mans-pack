@@ -26,8 +26,8 @@ const Social = () => {
 
     return (
         <div>
-            <h3>Dont have account? </h3>
-            <div className='flex gap-5'>
+            <h3>Dont have account? continue with</h3>
+            <div className='flex gap-5 mt-2'>
                 <button onClick={handlegooglein} className="flex text-blue-500"><FaGoogle /></button>
                 <button>facebook</button>
                 <button>Lnkedin</button>
