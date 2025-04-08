@@ -13,7 +13,12 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     console.log(user);
 
+
+
+
+
     useEffect(()=>{
+        // setLoading(true);
         
         const unsubscribe = onAuthStateChanged(auth, (currenuser)=>{
             if (currenuser) {
