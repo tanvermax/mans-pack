@@ -13,9 +13,35 @@ const Social = () => {
 
     const handlegooglein = async () => {
         try {
-            const result = await handegooglelogin();
+            const result = await handegooglelogin()
+
+                .then(result => {
+                    const user = result.user;
+                    const userinfo = {
+                        userName: user.displayName,
+                        email: user.email,
+                        role: "user",
+                    }
+                    fetch("http://localhost:5000/user", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(userinfo),
+                    })
+                        .then((res) => res.json())
+                        .then((data) => {
+                            ("inside the body", data);
+                            if (data.insertedId) {
+                                alert("Account created");
+                                navigate("/");
+                            }
+                        });
+                })
             toast.success(" Success! Operation completed.");
             console.log("User signed in:", result.user);
+
+
             navigate('/')
         } catch (error) {
             toast.error(" Error! Something went wrong.");

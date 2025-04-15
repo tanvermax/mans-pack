@@ -3,7 +3,7 @@ import useAuth from '../../../Provider/useAuth';
 import { Link } from 'react-router-dom';
 
 const HoverButton = () => {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
     const [isShown, setIsShown] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -48,15 +48,15 @@ const HoverButton = () => {
                             </div>
                         </div>
                         <div className='flex'>
-                        <div>
-                            <p className="lg:text-base text-[6px]">{user.email}</p>
-                            <p className="lg:text-base text-[6px]">{user.displayName}</p>
-                        </div>
-                        <button
-
-                            className="btn p-2 lg:btn-md bg-red-300 hover:bg-red-600 text-black">
-                            Log Out
-                        </button>
+                            <div>
+                                <p className="lg:text-base text-[6px]">{user.email}</p>
+                                <p className="lg:text-base text-[6px]">{user.displayName}</p>
+                            </div>
+                            <button
+                                onClick={logout}
+                                className="btn p-2 lg:btn-md bg-red-300 hover:bg-red-600 text-black">
+                                Log Out
+                            </button>
                         </div>
                     </div></>) : <><>
                         <Link to={"/signup"} className="btn">SignUp</Link>

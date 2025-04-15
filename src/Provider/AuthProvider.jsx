@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import { app } from '../Firebase/Firebase.init';
 
@@ -41,9 +41,14 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider);
     };
 
+    // logout
+    const logout = () => {
+        setLoading(true);
+        return signOut(auth);
+      };
 
     const authinfo = {
-        user, handegooglelogin, Loading
+        user, handegooglelogin, Loading,logout
     };
 
     return (
