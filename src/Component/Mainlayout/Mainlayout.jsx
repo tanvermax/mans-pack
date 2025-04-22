@@ -14,16 +14,16 @@ import FloatingChat from './FloatingChat';
 import { ToastContainer } from 'react-toastify';
 
 const Mainlayout = () => {
-    const nodeaderfooter = location.pathname.includes('dashboard')
+    // const nodeaderfooter = location.pathname.includes('dashboard')
     return (
         <div>
             <ToastContainer></ToastContainer>
-            {nodeaderfooter || <Navber></Navber>}
+            <Navber></Navber>
             <div className='min-h-[70vh]'>
             <Outlet></Outlet>
             </div>
             <FloatingChat></FloatingChat>
-           {nodeaderfooter ||  <Footer></Footer>}
+           <Footer></Footer>
             {/* <Mothercompany></Mothercompany> */}
         </div>
     );

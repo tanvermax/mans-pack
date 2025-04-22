@@ -12,6 +12,7 @@ import Login from "../Component/Authentication/Login";
 import Signup from "../Component/Authentication/Signup";
 import UserDetails from "../Admin/UserDetails/UserDetails";
 import SalesAnalytics from "../Admin/SalesAnalytics/SalesAnalytics";
+import Adminhome from "../Admin/Adminhome/Adminhome";
 
 export const Routs = createBrowserRouter([
     {
@@ -27,12 +28,18 @@ export const Routs = createBrowserRouter([
                         element: <ItemDetails></ItemDetails>
                     },
                     {
-                        path:"userdetails",
-                        element: <UserDetails></UserDetails>
+                        path: "userdetails",
+                        element: <UserDetails></UserDetails>,
+                        loader: () => fetch("http://localhost:5000/user"),
+
                     },
                     {
-                        path:"sales",
-                        element:<SalesAnalytics></SalesAnalytics>
+                        path:"adminhome",
+                        element:<Adminhome></Adminhome>
+                    },
+                    {
+                        path: "sales",
+                        element: <SalesAnalytics></SalesAnalytics>
                     }
                 ]
             }, {
@@ -63,12 +70,12 @@ export const Routs = createBrowserRouter([
                 errorElement: <ErrorPage></ErrorPage>
             },
             {
-                path:"login",
-                element:<Login></Login>
+                path: "login",
+                element: <Login></Login>
             },
             {
-                path:"signup",
-                element:<Signup></Signup>
+                path: "signup",
+                element: <Signup></Signup>
             }
         ],
         errorElement: <ErrorPage></ErrorPage>

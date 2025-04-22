@@ -30,7 +30,7 @@ const Dashitem = () => {
             <nav>
                 <ul className=' flex flex-col gap-5'>
                     <li ></li>
-                    <li className='w-5 mx-auto '>Home<Link className=' text-3xl hover:text-green-600' to={'/'}><SiHomebridge /></Link></li>
+                    <li className='w-5 mx-auto '>Home<Link className=' text-3xl hover:text-green-600' to={'/dashboard/adminhome'}><SiHomebridge /></Link></li>
                     <li className='w-5 mx-auto '><Link className=' text-3xl hover:text-green-600' to={'/dashboard/itemdetails'}><RiAlignItemLeftLine /></Link></li>
                     <li className='w-5 mx-auto '>User<Link className=' text-3xl hover:text-green-600' to={'/dashboard/userdetails'}><FaRegUserCircle /></Link></li>
                     <li className='w-5 mx-auto '>Sales<Link to={"/dashboard/sales"} className=' text-3xl hover:text-green-600'><VscGraphLine /></Link></li>

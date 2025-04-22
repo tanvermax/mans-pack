@@ -11,6 +11,7 @@ const HoverButton = () => {
     const handleClick = () => {
         setIsShown(prev => !prev);
     };
+// console.log(user);
 
 
     return (
@@ -42,19 +43,19 @@ const HoverButton = () => {
                                     : 'opacity-0 transform -translate-y-2 pointer-events-none'
                                     }`}
                             >
-                                <Link to="/dashboard" className="btn btn-primary w-full">
+                                <Link to="/dashboard/adminhome" className="btn btn-primary w-full">
                                     Dashboard
                                 </Link>
                             </div>
                         </div>
-                        <div className='flex'>
+                        <div className='lg:flex'>
                             <div>
                                 <p className="lg:text-base text-[6px]">{user.email}</p>
                                 <p className="lg:text-base text-[6px]">{user.displayName}</p>
                             </div>
                             <button
                                 onClick={logout}
-                                className="btn p-2 lg:btn-md bg-red-300 hover:bg-red-600 text-black">
+                                className="btn btn-xs p-2 lg:btn-md bg-red-300 hover:bg-red-600 text-black">
                                 Log Out
                             </button>
                         </div>

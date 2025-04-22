@@ -11,7 +11,7 @@ import HoverButton from "./HoverButton";
 
 const Navber = () => {
     const { user } = useAuth();
-    console.log(user);
+    // console.log(user);
 
 
 
