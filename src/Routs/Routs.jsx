@@ -13,6 +13,7 @@ import Signup from "../Component/Authentication/Signup";
 import UserDetails from "../Admin/UserDetails/UserDetails";
 import SalesAnalytics from "../Admin/SalesAnalytics/SalesAnalytics";
 import Adminhome from "../Admin/Adminhome/Adminhome";
+import AllNews from "../Component/Newspaert/Allnews";
 
 export const Routs = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ export const Routs = createBrowserRouter([
                 path: "/",
                 element: <Home></Home>,
                 errorElement: <ErrorPage></ErrorPage>
+            },
+            {
+                path:"newspart",
+                element: <AllNews></AllNews>
             },
             {
                 path: "e-commerce-packaging",

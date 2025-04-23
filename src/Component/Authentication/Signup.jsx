@@ -36,7 +36,7 @@ const Signup = () => {
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: "Your work has been saved",
+            title: "Your work has been created",
             showConfirmButton: false,
             timer: 1500
           });
@@ -86,6 +86,7 @@ const Signup = () => {
               <motion.input
                 {...register("fullName", { required: "Name is required" })}
                 type="text"
+                autoComplete="name"
                 className={`w-full text-slate-800 text-sm px-4 py-3 rounded focus:ring-2 focus:ring-blue-500 outline-none transition-all duration-300 ${errors.fullName ? "border-red-500 border" : "bg-slate-100"
                   }`}
                 placeholder="Enter full name"
@@ -110,6 +111,7 @@ const Signup = () => {
                   },
                 })}
                 type="email"
+                autoComplete="email"
                 className={`w-full text-slate-800 text-sm px-4 py-3 rounded focus:ring-2 focus:ring-blue-500 outline-none transition-all duration-300 ${errors.email ? "border-red-500 border" : "bg-slate-100"
                   }`}
                 placeholder="Enter email"
@@ -134,6 +136,7 @@ const Signup = () => {
                   },
                 })}
                 type="tel"
+                autoComplete="tel"
                 className={`w-full text-slate-800 text-sm px-4 py-3 rounded focus:ring-2 focus:ring-blue-500 outline-none transition-all duration-300 ${errors.mobile ? "border-red-500 border" : "bg-slate-100"
                   }`}
                 placeholder="Enter mobile number"
@@ -158,6 +161,7 @@ const Signup = () => {
                   },
                 })}
                 type="password"
+                autoComplete="new-password"
                 className={`w-full text-slate-800 text-sm px-4 py-3 rounded focus:ring-2 focus:ring-blue-500 outline-none transition-all duration-300 ${errors.password ? "border-red-500 border" : "bg-slate-100"
                   }`}
                 placeholder="Enter password"
@@ -180,6 +184,7 @@ const Signup = () => {
                     value === password || "Passwords do not match",
                 })}
                 type="password"
+                autoComplete="new-password"
                 className={`w-full text-slate-800 text-sm px-4 py-3 rounded focus:ring-2 focus:ring-blue-500 outline-none transition-all duration-300 ${errors.confirmPassword ? "border-red-500 border" : "bg-slate-100"
                   }`}
                 placeholder="Confirm password"

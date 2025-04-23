@@ -56,7 +56,11 @@ const Social = () => {
 
     return (
         <div>
-            <h3>Dont have account! continue with</h3>
+            <div className="mt-6 flex items-center justify-between">
+                <span className="border-b w-1/5 lg:w-1/4"></span>
+                <span className="text-xs text-gray-500 uppercase">or login with</span>
+                <span className="border-b w-1/5 lg:w-1/4"></span>
+            </div>
             <div className='flex  mt-2 items-center place-content-center'>
                 <Link onClick={handlegooglein} className="  text-blue-500 text-2xl"><FaGoogle /></Link>
                 {/* <Link className="">facebook</Link> */}

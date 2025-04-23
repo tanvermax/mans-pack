@@ -32,7 +32,7 @@ const Section1 = () => {
         }
     ]
     return (
-        <div className='grid lg:grid-cols-4 grid-cols-2 gap-5 w-11/12 mx-auto lg:py-20 py-5'>
+        <div className='grid lg:grid-cols-2 grid-cols-2 gap-5 w-11/12 mx-auto lg:py-20 py-5'>
             {
 
                 data.map((d, index) =>
