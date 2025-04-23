@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useAuth from '../../../Provider/useAuth';
 import { Link } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
 
 const HoverButton = () => {
     const { user, logout } = useAuth();
@@ -22,7 +23,7 @@ const HoverButton = () => {
                         <div className="relative inline-block ">
                             {/* Primary Button */}
                             <button
-                                className="btn transition-all duration-300"
+                                className="px-5 transition-all duration-300"
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
                                 onClick={handleClick}

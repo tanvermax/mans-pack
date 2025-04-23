@@ -20,12 +20,12 @@ const Navber = () => {
     const navber = (
         <>
             <ul className="menu menu-horizontal px-1 z-10 gap-10 text-base ">
-                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/"} className="hover:bg-white"> Home</Link></li>
-                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] ">
+                <li ><Link to={"/"} className="hover:bg-white"> Home</Link></li>
+                <li >
                     <details>
                         <summary>Service</summary>
                         <ul className="p-2 lg:w-[250px]">
-                            <li><Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link></li>
+                            <li className=""><Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link></li>
                             {/* <li><a></a></li> */}
                             <li><Link to={"/industrial"}>Industrial Packaging</Link></li>
                             <li><Link>Food Packaging</Link></li>
@@ -33,14 +33,14 @@ const Navber = () => {
                         </ul>
                     </details>
                 </li>
-                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link>Portfolio</Link></li>
-                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/contactus"}>Contact Us</Link></li>
-                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/aboutus"}>About Us</Link></li>
-                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/aboutus"}>Knowledge</Link></li>
-                <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><Link to={"/aboutus"}>Enquiry Cart</Link></li>
-                {/* <li className="hover:shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] "><HoverButton></HoverButton></li> */}
+                <li ><Link>Portfolio</Link></li>
+                <li ><Link to={"/contactus"}>Contact Us</Link></li>
+                <li ><Link to={"/aboutus"}>About Us</Link></li>
+                <li ><Link to={"/aboutus"}>Knowledge</Link></li>
+                <li ><Link to={"/aboutus"}>Enquiry Cart</Link></li>
+                {/* <li ><HoverButton></HoverButton></li> */}
                 <div className="flex gap-2 ">
-                <HoverButton></HoverButton>
+                    <HoverButton></HoverButton>
                 </div>
             </ul></>
     )
@@ -89,7 +89,7 @@ const Navber = () => {
                     <ul
                         tabIndex={0}
                         className="menu -left-40 menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a> Home</a></li>
+                        <li><Link to={"/"}>Home</Link></li>
                         <li>
 
                             <details>
@@ -110,7 +110,7 @@ const Navber = () => {
                         <li><Link>Knowledge</Link></li>
                         <li><Link>Enquiry Cart</Link></li>
                         <div className="flex gap-2 ">
-                        <HoverButton></HoverButton>
+                            <HoverButton></HoverButton>
 
                         </div>
                     </ul>

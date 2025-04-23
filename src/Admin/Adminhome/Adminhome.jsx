@@ -1,5 +1,8 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import useAxiosSecure from '../../Hook/useAxiosSecure';
 
 const Adminhome = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -7,6 +10,7 @@ const Adminhome = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const axiosSecure = useAxiosSecure();
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -17,27 +21,22 @@ const Adminhome = () => {
       description: data.description,
     }
     try {
-      const response = await fetch('http://localhost:5000/newspost', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(news),
-      });
 
-      if (!response.ok) {
-        throw new Error('Failed to upload data');
-      }
+      axiosSecure.post('/newspost', news)
+        .then(res => {
+          console.log(res.data);
+          if (res.data.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Your work has been saved",
+              showConfirmButton: false,
+              timer: 1500
+            });
 
-      const result = await response.json();
-      if (result.insertedId) {
-        setSuccess('News added successfully!');
-        reset(); // Reset form fields
-        setPreview(null); // Clear preview
-        document.getElementById('photo-input').value = null; // Clear file input
-      } else {
-        throw new Error('No insertedId received');
-      }
+          }
+        })
+      
     } catch (err) {
       setError(err.message || 'An error occurred');
     } finally {
@@ -59,13 +58,13 @@ const Adminhome = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-lg">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center ">
+      <div className="bg-white mb-6 rounded-2xl shadow-xl p-8 w-full max-w-lg">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           Upload Your Photo
         </h1>
-        <form onSubmit={handleSubmit(onSubmit)} 
-        className="space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)}
+          className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Photo (Preview Only)
@@ -170,8 +169,8 @@ const Adminhome = () => {
             type="submit"
             disabled={isSubmitting}
             className={`w-full py-2 px-4 rounded-lg text-white transition duration-200 ${isSubmitting
-                ? 'bg-blue-400 cursor-not-allowed'
-                : 'bg-blue-600 hover:bg-blue-700'
+              ? 'bg-blue-400 cursor-not-allowed'
+              : 'bg-blue-600 hover:bg-blue-700'
               }`}
           >
             {isSubmitting ? 'Submitting...' : 'Submit'}

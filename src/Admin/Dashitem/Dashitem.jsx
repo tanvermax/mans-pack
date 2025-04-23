@@ -29,13 +29,13 @@ const Dashitem = () => {
             <h1 className='text-3xl font-bold '><Link to={"/dashboard"}>Dashbord</Link></h1>
             <nav>
                 <ul className=' flex flex-col gap-5'>
-                    <li ></li>
+                    {/* <li ></li> */}
                     <li className='w-5 mx-auto '>Home<Link className=' text-3xl hover:text-green-600' to={'/dashboard/adminhome'}><SiHomebridge /></Link></li>
-                    <li className='w-5 mx-auto '><Link className=' text-3xl hover:text-green-600' to={'/dashboard/itemdetails'}><RiAlignItemLeftLine /></Link></li>
+                    {/* <li className='w-5 mx-auto '>client<Link className=' text-3xl hover:text-green-600' to={'/dashboard/itemdetails'}><RiAlignItemLeftLine /></Link></li> */}
                     <li className='w-5 mx-auto '>User<Link className=' text-3xl hover:text-green-600' to={'/dashboard/userdetails'}><FaRegUserCircle /></Link></li>
-                    <li className='w-5 mx-auto '>Sales<Link to={"/dashboard/sales"} className=' text-3xl hover:text-green-600'><VscGraphLine /></Link></li>
-                    <li className='w-5 mx-auto '>Date<Link className=' text-3xl hover:text-green-600'><TiCalendar /></Link></li>
-                    <li className='w-5 mx-auto '>Setting<Link className=' text-3xl hover:text-green-600'><TiCogOutline /></Link></li>
+                    {/* <li className='w-5 mx-auto '>Sales<Link to={"/dashboard/sales"} className=' text-3xl hover:text-green-600'><VscGraphLine /></Link></li> */}
+                    {/* <li className='w-5 mx-auto '>Date<Link className=' text-3xl hover:text-green-600'><TiCalendar /></Link></li> */}
+                    {/* <li className='w-5 mx-auto '>Setting<Link className=' text-3xl hover:text-green-600'><TiCogOutline /></Link></li> */}
 
                 </ul>
             </nav>

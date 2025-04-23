@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { BsBoxes } from 'react-icons/bs';
 import { FaBoxOpen } from 'react-icons/fa';
@@ -35,11 +36,17 @@ const Section1 = () => {
             {
 
                 data.map((d, index) =>
-                    <div key={index} className='border-[1px] border-blue-400 rounded-md text-center lg:space-y-3.5  space-y-1 p-3 shadow-2xl'>
+                    
+                    <motion.div 
+                    className="border-[1px] border-blue-400 rounded-md text-center lg:space-y-4 space-y-2 p-4 shadow-xl bg-white hover:shadow-2xl transition-shadow duration-300"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 2, y: 0 }}
+                    transition={{ duration: 0.9, delay: index * 0.3, ease: "easeOut" }}
+                    key={index} >
                         <div className='lg:text-5xl text-3xl place-items-center text-[#e69f06] '>{d.icone}</div>
                         <h1 className='text-[10px] lg:text-2xl'>{d.heading}</h1>
-                        <p className='text-[8px] lg:text-xl' >{d.description}</p>
-                    </div>
+                        <p className='text-[8px] lg:text-base' >{d.description}</p>
+                    </motion.div>
                 )
             }
         </div>

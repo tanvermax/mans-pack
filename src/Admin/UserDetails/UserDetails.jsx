@@ -15,20 +15,20 @@ const UserDetails = () => {
                 {/* <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">Most played songs this week</li> */}
 
                 {
-                    users.map(alluser => <li key={alluser._id} className="list-row">
-                        <div className="text-4xl font-thin opacity-30 tabular-nums">1</div>
+                    users.map((alluser, index) => <li key={alluser._id} className="list-row">
+                        <div className="text-4xl font-thin opacity-30 tabular-nums">{index + 1}</div>
                         <div>
-                            
+
                             <img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp" />
-                            </div>
+                        </div>
                         <div className="list-col-grow">
                             <div>{alluser.userName}</div>
                             <div className="text-xs uppercase font-semibold opacity-60">{alluser.email}</div>
                         </div>
-                        <div className='text-xs uppercase font-semibold opacity-60'>
+                        <div className='text-xs uppercase font-semibold opacity-60 place-content-center'>
                             {alluser.role}
                         </div>
-                        <button className="btn btn-square btn-ghost">
+                        <button className="btn bg-teal-500">
                             Edit
 
                         </button>

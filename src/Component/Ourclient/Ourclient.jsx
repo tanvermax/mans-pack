@@ -1,44 +1,44 @@
 import React from 'react';
-import photo1 from './../../../src/assets/client/pran-logo-416D020A91-seeklogo.com.png' 
-import photo2 from './../../../src/assets/client/gazi-group.jpg' 
-import photo3 from './../../../src/assets/client/Star Ciramics.png' 
-import photo4 from './../../../src/assets/client/Amar Food.png' 
-import photo5 from './../../../src/assets/client/Partex Group.png' 
-import photo6 from './../../../src/assets/client/autocom_logo_white_bg-e1518896407425-1-600x137.png' 
-import photo7 from './../../../src/assets/client/Jennys___Logo_1.jpg' 
-import photo8 from './../../../src/assets/client/Robi_Axiata.svg.png' 
-import photo9 from './../../../src/assets/client/Chaldal.com_logo.png' 
-import photo10 from './../../../src/assets/client/Pacific Pharma.png' 
-import photo11 from './../../../src/assets/client/Pacific Pharma logo.jpg' 
-import photo12 from './../../../src/assets/client/1617800247ATXME_s.jpg' 
-import photo13 from './../../../src/assets/client/images2.png' 
-import photo14 from './../../../src/assets/client/1693720984.Logo-Final.png' 
-import photo15 from './../../../src/assets/client/images3.png' 
-import photo16 from './../../../src/assets/client/khadim-ceramics.jpg' 
-import photo17 from './../../../src/assets/client/images3.jpeg' 
-import photo18 from './../../../src/assets/client/Mirpur Ciramics.jpeg' 
-import photo19 from './../../../src/assets/client/Asian Battery.jpeg' 
-import photo20 from './../../../src/assets/client/Asian Battery.png' 
-import photo21 from './../../../src/assets/client/Argus Metals.jpeg' 
-import photo22 from './../../../src/assets/client/MEP Group.png' 
-import photo23 from './../../../src/assets/client/Coppertech.jpeg' 
-import photo24 from './../../../src/assets/client/pacific-pharmaceuticals-ltd-logo-77E80B4FBF-seeklogo.com.png' 
-import photo25 from './../../../src/assets/client/Pacific Pharma logo2.jpg' 
-import photo26 from './../../../src/assets/client/Pacific Pharma logo3.jpg' 
-import photo27 from './../../../src/assets/client/Tank.png' 
-import photo28 from './../../../src/assets/client/Madina Group.jpeg' 
-import photo29 from './../../../src/assets/client/AB Group.jpg' 
-import photo30 from './../../../src/assets/client/AB Group1.jpg' 
-import photo31 from './../../../src/assets/client/Bangladesg Army.jpg' 
-import photo32 from './../../../src/assets/client/BRAC Log.png' 
-import photo33 from './../../../src/assets/client/Daraz.png' 
-import photo34 from './../../../src/assets/client/Jadroo Logo.png' 
-import photo35 from './../../../src/assets/client/Panda Shoes.png' 
-import photo36 from './../../../src/assets/client/VIctory Footwear.jpeg' 
-import photo37 from './../../../src/assets/client/seiko-watch2671.jpg' 
-import photo38 from './../../../src/assets/client/Circle Cable.png' 
-import photo39 from './../../../src/assets/client/Circle Cable2.png' 
-import photo40 from './../../../src/assets/client/Daraz Logo.png' 
+import photo1 from './../../../src/assets/client/pran-logo-416D020A91-seeklogo.com.png'
+import photo2 from './../../../src/assets/client/gazi-group.jpg'
+import photo3 from './../../../src/assets/client/Star Ciramics.png'
+import photo4 from './../../../src/assets/client/Amar Food.png'
+import photo5 from './../../../src/assets/client/Partex Group.png'
+import photo6 from './../../../src/assets/client/autocom_logo_white_bg-e1518896407425-1-600x137.png'
+import photo7 from './../../../src/assets/client/Jennys___Logo_1.jpg'
+import photo8 from './../../../src/assets/client/Robi_Axiata.svg.png'
+import photo9 from './../../../src/assets/client/Chaldal.com_logo.png'
+import photo10 from './../../../src/assets/client/Pacific Pharma.png'
+import photo11 from './../../../src/assets/client/Pacific Pharma logo.jpg'
+import photo12 from './../../../src/assets/client/1617800247ATXME_s.jpg'
+import photo13 from './../../../src/assets/client/images2.png'
+import photo14 from './../../../src/assets/client/1693720984.Logo-Final.png'
+import photo15 from './../../../src/assets/client/images3.png'
+import photo16 from './../../../src/assets/client/khadim-ceramics.jpg'
+import photo17 from './../../../src/assets/client/images3.jpeg'
+import photo18 from './../../../src/assets/client/Mirpur Ciramics.jpeg'
+import photo19 from './../../../src/assets/client/Asian Battery.jpeg'
+import photo20 from './../../../src/assets/client/Asian Battery.png'
+import photo21 from './../../../src/assets/client/Argus Metals.jpeg'
+import photo22 from './../../../src/assets/client/MEP Group.png'
+import photo23 from './../../../src/assets/client/Coppertech.jpeg'
+import photo24 from './../../../src/assets/client/pacific-pharmaceuticals-ltd-logo-77E80B4FBF-seeklogo.com.png'
+import photo25 from './../../../src/assets/client/Pacific Pharma logo2.jpg'
+import photo26 from './../../../src/assets/client/Pacific Pharma logo3.jpg'
+import photo27 from './../../../src/assets/client/Tank.png'
+import photo28 from './../../../src/assets/client/Madina Group.jpeg'
+import photo29 from './../../../src/assets/client/AB Group.jpg'
+import photo30 from './../../../src/assets/client/AB Group1.jpg'
+import photo31 from './../../../src/assets/client/Bangladesg Army.jpg'
+import photo32 from './../../../src/assets/client/BRAC Log.png'
+import photo33 from './../../../src/assets/client/Daraz.png'
+import photo34 from './../../../src/assets/client/Jadroo Logo.png'
+import photo35 from './../../../src/assets/client/Panda Shoes.png'
+import photo36 from './../../../src/assets/client/VIctory Footwear.jpeg'
+import photo37 from './../../../src/assets/client/seiko-watch2671.jpg'
+import photo38 from './../../../src/assets/client/Circle Cable.png'
+import photo39 from './../../../src/assets/client/Circle Cable2.png'
+import photo40 from './../../../src/assets/client/Daraz Logo.png'
 
 import { motion } from "framer-motion";
 
@@ -84,10 +84,10 @@ const Ourclient = () => {
         { "id": 38, photoname: photo38 },
         { "id": 39, photoname: photo39 },
         { "id": 40, photoname: photo40 }
-      ]
-      
+    ]
+
     return (
-        <div className='w-11/12 mx-auto place-items-center py-15 bg-gray-100'>
+        <div className=' mx-auto place-items-center py-15 bg-gray-100'>
             <h2 className='lg:text-5xl text-xl font-bold lg:py-4'>Our Clients</h2>
             <p className='lg:text-xl text-xs text-gray-500 pb-10'>Pleasure to work with</p>
             <div>
@@ -103,7 +103,11 @@ const Ourclient = () => {
                         }}
                     >
                         {[...logos, ...logos].map((logo, index) => (
-                            <img key={index}  src={logo.photoname} alt="Client Logo" className="h-16 " />
+                            <motion.img
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                                whileDrag={{ scale: 0.9, rotate: 10 }}
+                                drag key={index} src={logo.photoname} alt="Client Logo" className="h-16 " />
                         ))}
                     </motion.div>
                 </div>
