@@ -31,7 +31,7 @@ export const Routs = createBrowserRouter([
                     {
                         path: "userdetails",
                         element: <UserDetails></UserDetails>,
-                        loader: () => fetch("http://localhost:5000/user"),
+                        loader: () => fetch("https://man-pack-server.vercel.app/user"),
 
                     },
                     {
