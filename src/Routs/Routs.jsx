@@ -14,6 +14,12 @@ import UserDetails from "../Admin/UserDetails/UserDetails";
 import SalesAnalytics from "../Admin/SalesAnalytics/SalesAnalytics";
 import Adminhome from "../Admin/Adminhome/Adminhome";
 import AllNews from "../Component/Newspaert/Allnews";
+import Foodpack from "../Pages/Service/Foodpac/Foodpack";
+import Garmentpack from "../Pages/Service/Garmentpack/Garmentpack";
+import Portfolio from "../Pages/Portfolio/Portfolio";
+import Knowledge from "../Pages/Knowledge/Knowledge";
+import EnquiryCart from "../Pages/EnquiryCart/Enquirycart";
+import Products from "../Pages/EnquiryCart/Products";
 
 export const Routs = createBrowserRouter([
     {
@@ -35,8 +41,8 @@ export const Routs = createBrowserRouter([
 
                     },
                     {
-                        path:"adminhome",
-                        element:<Adminhome></Adminhome>
+                        path: "adminhome",
+                        element: <Adminhome></Adminhome>
                     },
                     {
                         path: "sales",
@@ -49,7 +55,7 @@ export const Routs = createBrowserRouter([
                 errorElement: <ErrorPage></ErrorPage>
             },
             {
-                path:"newspart",
+                path: "newspart",
                 element: <AllNews></AllNews>
             },
             {
@@ -57,17 +63,38 @@ export const Routs = createBrowserRouter([
                 element: <Ecom></Ecom>,
                 errorElement: <ErrorPage></ErrorPage>
 
+            }, {
+                path: "foodpack",
+                element: <Foodpack></Foodpack>
+            },
+            {
+                path: "garmentpack",
+                element: <Garmentpack></Garmentpack>
             },
             {
                 path: "contactus",
                 element: <Contact></Contact>,
                 errorElement: <ErrorPage></ErrorPage>
+            }, {
+                path: "portfolio",
+                element: <Portfolio></Portfolio>
             },
-
+            {
+                path: "/Knowledge",
+                element: <Knowledge></Knowledge>
+            },
+            {
+                path:"enquiry",
+                element:<EnquiryCart></EnquiryCart>
+            },
             {
                 path: "aboutus",
                 element: <Aboutus></Aboutus>,
                 errorElement: <ErrorPage></ErrorPage>
+            },
+            {
+                path:"products",
+                element:<Products></Products>
             },
             {
                 path: "industrial",

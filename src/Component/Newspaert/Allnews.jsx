@@ -22,7 +22,7 @@ const AllNews = () => {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="skeleton h-32 w-full"></div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
@@ -31,11 +31,11 @@ const AllNews = () => {
         <h2 className="font-manrope text-4xl font-bold text-gray-900 text-center mb-14">
           All Blogs
         </h2>
-        <div className="flex justify-center mb-14 gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8">
+        <div className="grid grid-cols-3 justify-center gap-5 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between  lg:gap-x-8">
           {data.map((newsdata) => (
             <div
               key={newsdata._id}
-              className="group cursor-pointer w-full max-lg:max-w-xl lg:w-1/3 border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-indigo-600"
+              className="group cursor-pointer w-full max-lg:max-w-xl  border border-gray-300 rounded-2xl p-5 m-2 transition-all duration-300 hover:border-indigo-600"
             >
               <div className="flex items-center mb-6">
                 <img

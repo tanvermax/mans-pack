@@ -62,7 +62,7 @@ const Newspart = () => {
         }
     }, [currentSlide]);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return  <div className="skeleton h-32 w-full"></div>;
     if (error) return <div>Error: {error}</div>;
 
     return (

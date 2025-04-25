@@ -26,18 +26,17 @@ const Navber = () => {
                         <summary>Service</summary>
                         <ul className="p-2 lg:w-[250px]">
                             <li className=""><Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link></li>
-                            {/* <li><a></a></li> */}
                             <li><Link to={"/industrial"}>Industrial Packaging</Link></li>
-                            <li><Link>Food Packaging</Link></li>
-                            <li><Link>Garments Packaging</Link></li>
+                            <li><Link to={"/foodpack"}>Food Packaging</Link></li>
+                            <li><Link to={"/garmentpack"}>Garments Packaging</Link></li>
                         </ul>
                     </details>
                 </li>
-                <li ><Link>Portfolio</Link></li>
+                <li ><Link to={"portfolio"}>Portfolio</Link></li>
                 <li ><Link to={"/contactus"}>Contact Us</Link></li>
                 <li ><Link to={"/aboutus"}>About Us</Link></li>
-                <li ><Link to={"/aboutus"}>Knowledge</Link></li>
-                <li ><Link to={"/aboutus"}>Enquiry Cart</Link></li>
+                <li ><Link to={"/knowledge"}>Knowledge</Link></li>
+                <li ><Link to={"/enquiry"}>Enquiry Cart</Link></li>
                 {/* <li ><HoverButton></HoverButton></li> */}
                 <div className="flex gap-2 ">
                     <HoverButton></HoverButton>
@@ -97,18 +96,18 @@ const Navber = () => {
                                 </summary>
                                 <ul className="p-2">
                                     <li><Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link></li>
-                                    <li><Link>Industrial Packaging</Link></li>
-                                    <li><Link>Food Packaging</Link></li>
-                                    <li><Link>Garments Packaging</Link></li>
+                                    <li><Link to={"/industrial"}>Industrial Packaging</Link></li>
+                                    <li><Link to={"/foodpack"}>Food Packaging</Link></li>
+                                    <li><Link to={"/garmentpack"}>Garments Packaging</Link></li>
                                     {/* <li><a>Industrial Packaging</a></li> */}
                                 </ul>
                             </details>
                         </li>
-                        <li><Link>Portfolio</Link></li>
+                        <li><Link to={"portfolio"}>Portfolio</Link></li>
                         <li><Link to={"/contactus"}>Contact Us</Link></li>
                         <li><Link to={"/aboutus"}>About Us</Link></li>
-                        <li><Link>Knowledge</Link></li>
-                        <li><Link>Enquiry Cart</Link></li>
+                        <li><Link to={'/knowledge'}>Knowledge</Link></li>
+                        <li><Link to={"/enquiry"}>Enquiry Cart</Link></li>
                         <div className="flex gap-2 ">
                             <HoverButton></HoverButton>
 
