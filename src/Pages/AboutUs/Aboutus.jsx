@@ -5,7 +5,7 @@ const Aboutus = () => {
     return (
         <div className='w-11/12 mx-auto font-semibold'>
             <img src={photo} alt="" />
-            <h3 className='text-5xl font-bold py-7'>About Mans Packaging</h3>
+            <h3 className='md:text-5xl font-bold py-7'>About Mans Packaging</h3>
             <hr />
             <p>“Mans Printing and Packaging: A Leader in Innovative Packaging Solutions”
             </p>

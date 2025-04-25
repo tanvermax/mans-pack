@@ -90,37 +90,37 @@ const handleFilter = (type) => {
     
     return (
         <div >
-            <div className=' place-items-center p-24 bg-gray-300'>
-                <h3 className='text-4xl font-bold'>PROJECT PORTFOLIO</h3>
-                <p className='pt-5 text-xl '>We are always Committed to providing high-quality packaging products as per client requirements. Be Happy With Us!</p>
+            <div className=' place-items-center md:p-24 bg-gray-300'>
+                <h3 className='text-xl md:text-4xl font-bold'>PROJECT PORTFOLIO</h3>
+                <p className='pt-5 md:text-xl text-xs text-center p-4'>We are always Committed to providing high-quality packaging products as per client requirements. Be Happy With Us!</p>
             </div>
-            <div className="flex justify-center gap-4 p-5">
+            <div className="md:flex  grid grid-cols-3 justify-center gap-1 md:gap-4 md:p-5 p-2">
                 <button
-                    className={`px-4 py-2 rounded ${filterType === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
+                    className={`px-4 py-2 rounded text-[8px] ${filterType === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
                     onClick={() => handleFilter('All')}
                 >
                     All
                 </button>
                 <button
-                    className={`px-4 py-2 rounded ${filterType === 'e-commerce' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
+                    className={`px-4 py-2 rounded text-[8px] ${filterType === 'e-commerce' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
                     onClick={() => handleFilter('e-commerce')}
                 >
                     Ecommerce
                 </button>
                 <button
-                    className={`px-4 py-2 rounded ${filterType === 'Food' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
+                    className={`px-4 py-2 rounded text-[8px] ${filterType === 'Food' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
                     onClick={() => handleFilter('Food')}
                 >
                     Food
                 </button>
                 <button
-                    className={`px-4 py-2 rounded ${filterType === 'Industrial' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
+                    className={`px-4 py-2 rounded text-[8px] ${filterType === 'Industrial' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
                     onClick={() => handleFilter('Industrial')}
                 >
                     Industrial
                 </button>
                 <button
-                    className={`px-4 py-2 rounded ${filterType === 'Garments' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
+                    className={`px-4 py-2 rounded text-[8px] ${filterType === 'Garments' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'} hover:bg-blue-500 hover:text-white transition`}
                     onClick={() => handleFilter('Garments')}
                 >
                     Garments

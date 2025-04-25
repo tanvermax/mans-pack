@@ -40,7 +40,7 @@ const Products = () => {
           </motion.div>
         ))}
       </div>
-      <Link to="/cart" className="btn btn-secondary mt-6 block w-fit mx-auto">
+      <Link to="/" className="btn btn-secondary mt-6 block w-fit mx-auto">
         View Enquiry Cart
       </Link>
     </div>

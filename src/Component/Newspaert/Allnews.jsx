@@ -28,10 +28,10 @@ const AllNews = () => {
   return (
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-manrope text-4xl font-bold text-gray-900 text-center mb-14">
+        <h2 className="font-manrope md:text-4xl font-bold text-gray-900 text-center mb-14">
           All Blogs
         </h2>
-        <div className="grid grid-cols-3 justify-center gap-5 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between  lg:gap-x-8">
+        <div className="grid md:grid-cols-3 justify-center gap-5 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between  lg:gap-x-8">
           {data.map((newsdata) => (
             <div
               key={newsdata._id}

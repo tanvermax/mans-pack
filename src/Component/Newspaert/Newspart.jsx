@@ -66,7 +66,7 @@ const Newspart = () => {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <section className="py-24">
+        <section className="py-24 overflow-x-hidden">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h2 className="font-manrope text-2xl lg:text-4xl font-bold text-gray-900 text-center mb-14">
                     Our popular blogs
@@ -84,7 +84,7 @@ const Newspart = () => {
                                 key={newsdata._id}
                                 className="group cursor-pointer w-full border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-indigo-600 snap-start shrink-0"
                             >
-                                <div className="flex items-center mb-6">
+                                <div className="md:flex items-center mb-6">
                                     <img
                                         src="https://pagedone.io/asset/uploads/1696244553.png"
                                         alt="Harsh image"
