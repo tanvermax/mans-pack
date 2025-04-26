@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useAuth from '../../../Provider/useAuth';
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
+import useAxiosSecure from '../../../Hook/useAxiosSecure';
 
 const HoverButton = () => {
     const { user, logout } = useAuth();
+    const [userData, setUserData] = useState({});
     const [isShown, setIsShown] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -12,7 +14,23 @@ const HoverButton = () => {
     const handleClick = () => {
         setIsShown(prev => !prev);
     };
-// console.log(user);
+
+    const token = localStorage.getItem("access-token");
+    const axiosSecure = useAxiosSecure();
+    // const [userDa] = userMange();
+    useEffect(() => {
+        if (user?.email && token) {
+            axiosSecure(`/user?email=${user.email}`).then((res) => {
+                setUserData(res.data);
+            });
+        }
+    }, [user?.email, token]);
+
+    console.log(user);
+    console.log(userData);
+
+
+
 
 
     return (
@@ -44,9 +62,11 @@ const HoverButton = () => {
                                     : 'opacity-0 transform -translate-y-2 pointer-events-none'
                                     }`}
                             >
-                                <Link to="/dashboard/adminhome" className="btn btn-primary w-full">
-                                    Dashboard
-                                </Link>
+                                {
+                                    userData.role === 'admin' ? (<Link to="/dashboard/adminhome" className="btn btn-primary w-full">
+                                        Dashboard
+                                    </Link>) : null
+                                }
                             </div>
                         </div>
                         <div className='lg:flex'>

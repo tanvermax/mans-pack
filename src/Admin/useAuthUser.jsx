@@ -16,7 +16,7 @@ const useAuthUser = (email) => {
     const fetchUser = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://man-pack-server.vercel.app/users');
+        const response = await fetch('http://localhost:5000/users');
         if (!response.ok) throw new Error('Failed to fetch users');
         const users = await response.json();
         const matchedUser = users.find((u) => u.email.toLowerCase() === email.toLowerCase());

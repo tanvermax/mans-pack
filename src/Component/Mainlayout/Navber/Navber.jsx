@@ -1,19 +1,18 @@
 // import React, { useState } from "react";
 import logo from "./../../../assets/manspackaginglogo.png"
-import { FaChevronDown, FaFacebook, FaLinkedin } from "react-icons/fa";
-// import { BsChevronBarContract, BsLayoutSidebarReverse } from "react-icons/bs";
-// import { HiMiniBarsArrowUp } from "react-icons/hi2";
-// import { VscThreeBars } from "react-icons/vsc";
+import {  FaFacebook, FaLinkedin } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 import { CiInstagram } from "react-icons/ci";
-import useAuth from "../../../Provider/useAuth";
 import HoverButton from "./HoverButton";
 
 const Navber = () => {
-    const { user } = useAuth();
-    // console.log(user);
 
 
+
+   
+  
+    
 
 
 

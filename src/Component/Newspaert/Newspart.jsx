@@ -13,7 +13,7 @@ const Newspart = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://man-pack-server.vercel.app/newspost');
+                const response = await fetch('http://localhost:5000/newspost');
                 if (!response.ok) throw new Error('Failed to fetch');
                 const result = await response.json();
                 setData(result);
