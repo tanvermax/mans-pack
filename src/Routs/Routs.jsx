@@ -34,7 +34,8 @@ export const Routs = createBrowserRouter([
                 children: [
                     {
                         path: 'itemdetails',
-                        element: <ItemDetails></ItemDetails>
+                        element: <ItemDetails></ItemDetails>,
+                        loader: ()=>fetch("https://man-pack-server.vercel.app/newspost")
                     },
                     {
                         path: "userdetails",
