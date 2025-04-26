@@ -16,42 +16,40 @@ const Social = () => {
 
     const handlegooglein = async () => {
         try {
-            const result = await handegooglelogin()
+            const result = await handegooglelogin();
+            const user = result.user;
 
-                .then(result => {
-                    const user = result.user;
-                    const userinfo = {
-                        userName: user.displayName,
-                        email: user.email,
-                        role: "user",
-                    }
-                    axiosSecure.post('/user', userinfo)
-                        .then(res => {
-                            console.log(res.data);
-                            if (res.data.insertedId) {
-                                Swal.fire({
-                                    position: "top-end",
-                                    icon: "success",
-                                    title: "Your work has been saved",
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                });
-                            }
-                            navigate('/')
+            const userinfo = {
+                userName: user.displayName,
+                email: user.email,
+                role: "user",
+            };
 
-                        })
+            // Try to save the user
+            const res = await axiosSecure.post('/user', userinfo).catch(err => err.response);
 
-                })
-            // toast.success(" Success! Operation completed.");
-            console.log("User signed in:", result.user);
+            if (res?.data?.insertedId) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "New user created!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else if (res?.data?.message === 'User already exists') {
+                console.log("User already exists, skipping insert.");
+            } else {
+                console.warn("Unexpected response while inserting user:", res.data);
+            }
 
+            console.log("User signed in:", user);
+            navigate('/');
 
-            navigate('/')
         } catch (error) {
-            // toast.error(" Error! Something went wrong.");
             console.error("Google sign-in error:", error);
         }
     };
+
 
 
     return (
@@ -62,7 +60,14 @@ const Social = () => {
                 <span className="border-b w-1/5 lg:w-1/4"></span>
             </div>
             <div className='flex  mt-2 items-center place-content-center'>
-                <Link onClick={handlegooglein} className="  text-blue-500 text-2xl"><FaGoogle /></Link>
+                <div className='flex mt-2 items-center place-content-center'>
+                    <button
+                        onClick={handlegooglein}
+                        className="text-blue-500 text-2xl"
+                    >
+                        <FaGoogle />
+                    </button>
+                </div>
                 {/* <Link className="">facebook</Link> */}
                 {/* <Link>Lnkedin</Link> */}
             </div>

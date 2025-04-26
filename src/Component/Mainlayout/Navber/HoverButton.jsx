@@ -20,7 +20,8 @@ const HoverButton = () => {
     // const [userDa] = userMange();
     useEffect(() => {
         if (user?.email && token) {
-            axiosSecure(`/user?email=${user.email}`).then((res) => {
+            axiosSecure.post(`/user?email=${user.email}`)
+            .then((res) => {
                 setUserData(res.data);
             });
         }
