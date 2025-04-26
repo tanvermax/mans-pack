@@ -20,6 +20,8 @@ import Portfolio from "../Pages/Portfolio/Portfolio";
 import Knowledge from "../Pages/Knowledge/Knowledge";
 import EnquiryCart from "../Pages/EnquiryCart/Enquirycart";
 import Products from "../Pages/EnquiryCart/Products";
+import PrivateRoute from "../Hook/PrivateRoute";
+// import PrivateRoute from './PrivateRoute';
 
 export const Routs = createBrowserRouter([
     {
@@ -28,7 +30,7 @@ export const Routs = createBrowserRouter([
         children: [
             {
                 path: "dashboard",
-                element: <Dashbord></Dashbord>,
+                element: <PrivateRoute> <Dashbord></Dashbord></PrivateRoute>,
                 children: [
                     {
                         path: 'itemdetails',
@@ -36,7 +38,7 @@ export const Routs = createBrowserRouter([
                     },
                     {
                         path: "userdetails",
-                        element: <UserDetails></UserDetails>,
+                        element: <PrivateRoute><UserDetails></UserDetails></PrivateRoute>,
                         loader: () => fetch("https://man-pack-server.vercel.app/user"),
 
                     },
@@ -48,7 +50,8 @@ export const Routs = createBrowserRouter([
                         path: "sales",
                         element: <SalesAnalytics></SalesAnalytics>
                     }
-                ]
+                ],
+                errorElement: <ErrorPage></ErrorPage>
             }, {
                 path: "/",
                 element: <Home></Home>,
@@ -56,7 +59,8 @@ export const Routs = createBrowserRouter([
             },
             {
                 path: "newspart",
-                element: <AllNews></AllNews>
+                element: <AllNews></AllNews>,
+                errorElement: <ErrorPage></ErrorPage>
             },
             {
                 path: "e-commerce-packaging",
@@ -65,11 +69,13 @@ export const Routs = createBrowserRouter([
 
             }, {
                 path: "foodpack",
-                element: <Foodpack></Foodpack>
+                element: <Foodpack></Foodpack>,
+                errorElement: <ErrorPage></ErrorPage>
             },
             {
                 path: "garmentpack",
-                element: <Garmentpack></Garmentpack>
+                element: <Garmentpack></Garmentpack>,
+                errorElement: <ErrorPage></ErrorPage>
             },
             {
                 path: "contactus",
@@ -77,15 +83,18 @@ export const Routs = createBrowserRouter([
                 errorElement: <ErrorPage></ErrorPage>
             }, {
                 path: "portfolio",
-                element: <Portfolio></Portfolio>
+                element: <Portfolio></Portfolio>,
+                errorElement: <ErrorPage></ErrorPage>
             },
             {
                 path: "/Knowledge",
-                element: <Knowledge></Knowledge>
+                element: <Knowledge></Knowledge>,
+                errorElement: <ErrorPage></ErrorPage>
             },
             {
-                path:"enquiry",
-                element:<EnquiryCart></EnquiryCart>
+                path: "enquiry",
+                element: <EnquiryCart></EnquiryCart>,
+                errorElement: <ErrorPage></ErrorPage>
             },
             {
                 path: "aboutus",
@@ -93,8 +102,9 @@ export const Routs = createBrowserRouter([
                 errorElement: <ErrorPage></ErrorPage>
             },
             {
-                path:"products",
-                element:<Products></Products>
+                path: "products",
+                element: <Products></Products>,
+                errorElement: <ErrorPage></ErrorPage>
             },
             {
                 path: "industrial",
@@ -103,11 +113,13 @@ export const Routs = createBrowserRouter([
             },
             {
                 path: "login",
-                element: <Login></Login>
+                element: <Login></Login>,
+                errorElement: <ErrorPage></ErrorPage>
             },
             {
                 path: "signup",
-                element: <Signup></Signup>
+                element: <Signup></Signup>,
+                errorElement: <ErrorPage></ErrorPage>
             }
         ],
         errorElement: <ErrorPage></ErrorPage>

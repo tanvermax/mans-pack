@@ -10,14 +10,15 @@ import {
 } from '@tanstack/react-query';
 import { CartProvider } from './Pages/EnquiryCart/CartContext.jsx';
 
+// Initialize react-query client
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
-      <CartProvider>
-        <QueryClientProvider client={queryClient}>
-          {/* No Hydrate needed unless SSR is used */}
+    <AuthProvider> {/* Provides Auth context globally */}
+      <CartProvider> {/* Provides Cart context globally */}
+        <QueryClientProvider client={queryClient}> {/* Provides react-query globally */}
+          {/* RouterProvider will use Routs where you define PrivateRoute and AdminRoute */}
           <RouterProvider router={Routs} />
         </QueryClientProvider>
       </CartProvider>
