@@ -23,7 +23,7 @@ const ItemDetails = () => {
         }).then(async (result) => {
           if (result.isConfirmed) {
             try {
-              const response = await axiosSecure.delete(`/user/${id}`);
+              const response = await axiosSecure.delete(`/newspost/${id}`);
               console.log(response.data);
               // deleteUser1();
     

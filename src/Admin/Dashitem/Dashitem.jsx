@@ -1,40 +1,80 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaRegUserCircle, FaThList } from 'react-icons/fa';
 import { SiHomebridge } from "react-icons/si";
 import { Link } from 'react-router-dom';
 import useAuth from '../../Provider/useAuth';
-
+import useAxiosSecure from '../../Hook/useAxiosSecure';
 
 const Dashitem = () => {
     const { user } = useAuth();
-    return (
-        <div className=' h-screen '>
-            <div className='place-items-center p-5 '>
-                {
-                    user ? <>
-                    <p>User:{user.displayName}</p>
-                    <p className='text-xs'>Email: {user.email}</p>
-                    <p>Role: admin</p>
+     const [userData, setUserData] = useState({});
 
-                    </> : <> <FaRegUserCircle />
-                        <p>user:name</p>
-                        <p>email</p>
-                       
+
+    const axiosSecure = useAxiosSecure();
+   
+    useEffect(() => {
+        if (user?.email ) {
+            axiosSecure.get(`/user?email=${user.email}`)
+            .then((res) => {
+                setUserData(res.data);
+            });
+        }
+    }, [user?.email]);
+
+
+    // console.log(user);
+    console.log(userData);
+
+    return (
+        <div className="h-screen bg-gradient-to-b from-white to-gray-100 p-6 flex flex-col">
+            {/* User Info */}
+            <div className="flex flex-col items-center bg-white p-4 rounded-lg shadow-md mb-8">
+                {
+                    userData ? (
+                        <>
+                            <FaRegUserCircle className="text-5xl text-gray-600 mb-2" />
+                            <p className="text-lg font-semibold text-gray-800">{userData.displayName}</p>
+                            <p className="text-sm text-gray-500">{userData.email}</p>
+                            <p className="text-sm text-green-500 font-bold mt-1">Role: {userData.role}</p>
                         </>
+                    ) : (
+                        <>
+                            <FaRegUserCircle className="text-5xl text-gray-400 mb-2" />
+                            <p className="text-lg text-gray-400">Guest User</p>
+                            <p className="text-sm text-gray-300">No Email</p>
+                        </>
+                    )
                 }
             </div>
-            <h1 className='text-3xl font-bold '><Link to={"/dashboard"}>Dashbord</Link></h1>
-            <nav>
-                <ul className=' flex flex-col gap-5'>
-                    {/* <li ></li> */}
-                    <li className='w-5 mx-auto'>Home<Link className=' text-3xl hover:text-green-600' to={'/dashboard/adminhome'}><SiHomebridge /></Link></li>
-                    <li className='w-5 mx-auto '>Post<Link className=' text-3xl hover:text-green-600' to={'/dashboard/itemdetails'}><FaThList /></Link></li>
-                    <li className='w-5 mx-auto '>User<Link className=' text-3xl hover:text-green-600' to={'/dashboard/userdetails'}><FaRegUserCircle /></Link></li>
-                    {/* <li className='w-5 mx-auto '>Sales<Link to={"/dashboard/sales"} className=' text-3xl hover:text-green-600'><VscGraphLine /></Link></li> */}
-                    {/* <li className='w-5 mx-auto '>Date<Link className=' text-3xl hover:text-green-600'><TiCalendar /></Link></li> */}
-                    {/* <li className='w-5 mx-auto '>Setting<Link className=' text-3xl hover:text-green-600'><TiCogOutline /></Link></li> */}
 
-                </ul>
+            {/* Dashboard Title */}
+            <h1 className="text-2xl font-bold text-center text-gray-700 mb-6">Dashboard Menu</h1>
+
+            {/* Navigation Links */}
+            <nav className="flex flex-col gap-6">
+                <Link 
+                    to="/dashboard/adminhome"
+                    className="flex items-center gap-4 text-gray-600 hover:text-green-600 text-lg font-medium px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300"
+                >
+                    <SiHomebridge className="text-2xl" />
+                    Home
+                </Link>
+
+                <Link 
+                    to="/dashboard/itemdetails"
+                    className="flex items-center gap-4 text-gray-600 hover:text-green-600 text-lg font-medium px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300"
+                >
+                    <FaThList className="text-2xl" />
+                    Post
+                </Link>
+
+                <Link 
+                    to="/dashboard/userdetails"
+                    className="flex items-center gap-4 text-gray-600 hover:text-green-600 text-lg font-medium px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300"
+                >
+                    <FaRegUserCircle className="text-2xl" />
+                    User
+                </Link>
             </nav>
         </div>
     );
