@@ -27,7 +27,7 @@ const ItemDetails = () => {
               console.log(response.data);
               // deleteUser1();
     
-              if (response.data.deletedCount > 0) {
+              if (response.data.success > true) {
                 Swal.fire({
                   title: "Deleted!",
                   text: "Your user has been deleted.",
