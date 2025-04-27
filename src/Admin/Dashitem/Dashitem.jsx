@@ -23,7 +23,7 @@ const Dashitem = () => {
 
 
     // console.log(user);
-    console.log(userData);
+    // console.log(userData);
 
     return (
         <div className="h-screen bg-gradient-to-b from-white to-gray-100 p-6 flex flex-col">

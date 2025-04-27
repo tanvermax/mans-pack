@@ -1,42 +1,42 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../Hook/useAxiosSecure';
 
 const Adminhome = () => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
-  const [preview, setPreview] = useState(null);
+  const { register, handleSubmit, formState: { errors }, reset, watch } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const axiosSecure = useAxiosSecure();
 
+  // Watch the photo URL input
+  const photoUrl = watch('photoUrl');
+
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     setError(null);
     setSuccess(null);
+    
     const news = {
       headline: data.headline,
       description: data.description,
+      photoUrl: data.photoUrl, // Save the URL too if you want
     }
+
     try {
-
-      axiosSecure.post('/newspost', news)
-        .then(res => {
-          console.log(res.data);
-          if (res.data.insertedId) {
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Your work has been saved",
-              showConfirmButton: false,
-              timer: 1500
-            });
-
-          }
-        })
-      
+      const res = await axiosSecure.post('/newspost', news);
+      console.log(res.data);
+      if (res.data.insertedId) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        reset(); // Clear form after submit
+      }
     } catch (err) {
       setError(err.message || 'An error occurred');
     } finally {
@@ -44,76 +44,45 @@ const Adminhome = () => {
     }
   };
 
-  const handlePhotoChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      setPreview(null);
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center ">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white mb-6 rounded-2xl shadow-xl p-8 w-full max-w-lg">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Upload Your Photo
+          Upload Your Photo (by URL)
         </h1>
-        <form onSubmit={handleSubmit(onSubmit)}
-          className="space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          
+          {/* Photo URL Input */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Photo (Preview Only)
+            <label htmlFor="photoUrl" className="block text-sm font-medium text-gray-700 mb-1">
+              Photo URL
             </label>
-            <div className="flex items-center justify-center w-full">
-              <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
-                {preview ? (
-                  <img
-                    src={preview}
-                    alt="Preview"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                ) : (
-                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                    <svg
-                      className="w-8 h-8 mb-4 text-gray-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M7 16V8m0 0l-4 4m4-4l4 4m6-4v8m-4-4h8"
-                      />
-                    </svg>
-                    <p className="mb-2 text-sm text-gray-500">
-                      <span className="font-semibold">Click to upload</span> or drag and drop
-                    </p>
-                    <p className="text-xs text-gray-500">PNG, JPG (MAX. 5MB)</p>
-                  </div>
-                )}
-                <input
-                  id="photo-input"
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  {...register('photo', {
-                    onChange: handlePhotoChange,
-                  })}
-                />
-              </label>
-            </div>
-            {errors.photo && (
-              <p className="mt-1 text-sm text-red-600">{errors.photo.message}</p>
+            <input
+              id="photoUrl"
+              type="text"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Paste image URL here"
+              {...register('photoUrl', {
+                required: 'Photo URL is required',
+              })}
+            />
+            {errors.photoUrl && (
+              <p className="mt-1 text-sm text-red-600">{errors.photoUrl.message}</p>
             )}
           </div>
 
+          {/* Live Preview */}
+          {photoUrl && (
+            <div className="flex justify-center">
+              <img
+                src={photoUrl}
+                alt="Preview"
+                className="w-full h-64 object-cover rounded-lg border mt-2"
+              />
+            </div>
+          )}
+
+          {/* Headline */}
           <div>
             <label htmlFor="headline" className="block text-sm font-medium text-gray-700 mb-1">
               Headline
@@ -136,6 +105,7 @@ const Adminhome = () => {
             )}
           </div>
 
+          {/* Description */}
           <div>
             <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
               Description
@@ -158,13 +128,11 @@ const Adminhome = () => {
             )}
           </div>
 
-          {error && (
-            <p className="text-sm text-red-600 text-center">{error}</p>
-          )}
-          {success && (
-            <p className="text-sm text-green-600 text-center">{success}</p>
-          )}
+          {/* Error & Success Messages */}
+          {error && <p className="text-sm text-red-600 text-center">{error}</p>}
+          {success && <p className="text-sm text-green-600 text-center">{success}</p>}
 
+          {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}

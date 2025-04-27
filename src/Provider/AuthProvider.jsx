@@ -10,9 +10,11 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
     const auth = getAuth(app);
-    const [Loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
     const [user, setUser] = useState(null);
     const axiosPublic = useaxiospublic();
+
+    
     // console.log(user);
 
 
@@ -85,7 +87,7 @@ useEffect(() => {
     //     return deleteUser(user);
     //   };
     const authinfo = {
-        user, handegooglelogin, Loading, logout, loginwithemail, handlenewuser, setUser
+        user, handegooglelogin, loading, logout, loginwithemail, handlenewuser, setUser
     };
 
     return (
