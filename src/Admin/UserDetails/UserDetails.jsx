@@ -3,163 +3,111 @@ import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../Hook/useAxiosSecure';
 
-
 const UserDetails = () => {
-
-
   const axiosSecure = useAxiosSecure();
-
   const users = useLoaderData() || [];
 
-  console.log(users);
-  
-  // console.log(users);
-  const handledelete = async (id) => {
-    console.log(id);
-
+  const handleDelete = async (id) => {
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "This user will be permanently deleted!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete!",
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           const response = await axiosSecure.delete(`/user/${id}`);
-          console.log(response.data);
-          // deleteUser1();
-
           if (response.data.deletedCount > 0) {
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your user has been deleted.",
-              icon: "success",
-            });
+            Swal.fire("Deleted!", "User has been deleted.", "success");
           }
         } catch (error) {
           console.error("Error deleting user:", error);
-          Swal.fire({
-            title: "Error!",
-            text: "Something went wrong while deleting the user.",
-            icon: "error",
-          });
+          Swal.fire("Error!", "Failed to delete user.", "error");
         }
       }
     });
   };
 
-
-   const handleMakeUser=(alluser)=>{
-    console.log(alluser._id);
-    
-    axiosSecure.patch(`/user/user/${alluser._id}`)
+  const handleMakeUser = (user) => {
+    axiosSecure.patch(`/user/user/${user._id}`)
       .then(res => {
-        console.log(res.data);
-        if (res.data.success) {  // Check if the response was successful
-          Swal.fire({
-            title: "Success!",
-            text: res.data.message, // Use the message from the server response
-            icon: "success",
-          });
+        if (res.data.success) {
+          Swal.fire("Updated!", res.data.message, "success");
         } else {
-          Swal.fire({
-            title: "Error!",
-            text: res.data.message || "Unable to update the role.",
-            icon: "error",
-          });
+          Swal.fire("Error!", res.data.message || "Could not update role.", "error");
         }
       })
-      .catch(error => {
-        console.error("Error making user admin:", error);
-        Swal.fire({
-          title: "Error!",
-          text: "Something went wrong while updating the user role.",
-          icon: "error",
-        });
-      });
-   }
-
-
-  const handleMakeAdmin = (alluser) => {
-    console.log(alluser._id);
-    
-    axiosSecure.patch(`/user/admin/${alluser._id}`)
-      .then(res => {
-        console.log(res.data);
-        if (res.data.success) {  // Check if the response was successful
-          Swal.fire({
-            title: "Success!",
-            text: res.data.message, // Use the message from the server response
-            icon: "success",
-          });
-        } else {
-          Swal.fire({
-            title: "Error!",
-            text: res.data.message || "Unable to update the role.",
-            icon: "error",
-          });
-        }
-      })
-      .catch(error => {
-        console.error("Error making user admin:", error);
-        Swal.fire({
-          title: "Error!",
-          text: "Something went wrong while updating the user role.",
-          icon: "error",
-        });
-      });
+      .catch(() => Swal.fire("Error!", "Role update failed.", "error"));
   };
-  
 
-
+  const handleMakeAdmin = (user) => {
+    axiosSecure.patch(`/user/admin/${user._id}`)
+      .then(res => {
+        if (res.data.success) {
+          Swal.fire("Updated!", res.data.message, "success");
+        } else {
+          Swal.fire("Error!", res.data.message || "Could not update role.", "error");
+        }
+      })
+      .catch(() => Swal.fire("Error!", "Role update failed.", "error"));
+  };
 
   return (
-    <div>
-      <ul className="list bg-base-100  shadow-md p-10" >
-        <h2 className='text-3xl'> All Users</h2>
-        {/* <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">Most played songs this week</li> */}
-
-        {
-          users.map((alluser, index) =>
-           <li key={alluser._id} className="list-row">
-            <div className="text-4xl font-thin opacity-30 tabular-nums">{index + 1}</div>
-            <div>
-
-              <img className="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp" />
-            </div>
-            <div className="list-col-grow">
-              <div>{alluser.userName}</div>
-              <div className="text-xs uppercase font-semibold opacity-60">{alluser.email}</div>
-            </div>
-
-            {alluser.role === 'admin' ? <button onClick={() => handleMakeUser(alluser)} className='btn text-xs uppercase font-semibold opacity-60 place-content-center'>
-            Admin
-              </button> :
-              <button onClick={() => handleMakeAdmin(alluser)} className='btn text-xs uppercase font-semibold opacity-60 place-content-center'>
-                {alluser.role}
-              </button>
-            }
-            {/* <button className="btn bg-teal-500">
-                            Edit
-
-                        </button> */}
-            <button
-              onClick={() => handledelete(alluser._id)}
-              className="btn  bg-red-500 "
-            >
-              Delete user
-            </button>
-          </li>)
-        }
-
-
-
-
-
-      </ul>
+    <div className="p-6">
+      <h2 className="text-3xl font-semibold mb-6">All Users</h2>
+      <div className="overflow-x-auto">
+        <table className="min-w-full table-auto border-collapse border border-gray-200 bg-white shadow-md">
+          <thead className="bg-gray-100 text-left">
+            <tr>
+              <th className="p-3 border">#</th>
+              <th className="p-3 border">Photo</th>
+              <th className="p-3 border">Name</th>
+              <th className="p-3 border">Email</th>
+              <th className="p-3 border">Role</th>
+              <th className="p-3 border">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, idx) => (
+              <tr key={user._id} className="hover:bg-gray-50">
+                <td className="p-3 border text-center">{idx + 1}</td>
+                <td className="p-3 border">
+                  <img
+                    className="w-10 h-10 rounded-full object-cover"
+                    src={user.photoURL || "https://i.ibb.co/0jqHpnp/default-user.png"}
+                    alt={user.userName}
+                  />
+                </td>
+                <td className="p-3 border font-medium">{user.userName}</td>
+                <td className="p-3 border text-sm text-gray-600">{user.email}</td>
+                <td className="p-3 border text-center">
+                  {user.role === 'admin' ? (
+                    <span className="bg-green-200 text-green-800 text-xs px-3 py-1 rounded-full font-semibold cursor-pointer" onClick={() => handleMakeUser(user)}>
+                      Admin
+                    </span>
+                  ) : (
+                    <span className="bg-blue-200 text-blue-800 text-xs px-3 py-1 rounded-full font-semibold cursor-pointer" onClick={() => handleMakeAdmin(user)}>
+                      {user.role || 'User'}
+                    </span>
+                  )}
+                </td>
+                <td className="p-3 border text-center space-x-2">
+                  {/* Edit button could be added here if needed */}
+                  <button
+                    onClick={() => handleDelete(user._id)}
+                    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-xs"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

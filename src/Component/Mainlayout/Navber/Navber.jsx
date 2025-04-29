@@ -1,50 +1,37 @@
-// import React, { useState } from "react";
-import logo from "./../../../assets/manspackaginglogo.png"
-import {  FaFacebook, FaLinkedin } from "react-icons/fa";
-
+import React from "react";
 import { Link } from "react-router-dom";
+import logo from "./../../../assets/manspackaginglogo.png";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import HoverButton from "./HoverButton";
 
 const Navber = () => {
-
-
-
-   
-  
-    
-
-
-
-    const navber = (
-        <>
-            <ul className="menu menu-horizontal px-1 z-10 gap-10 text-base ">
-                <li ><Link to={"/"} className="hover:bg-white"> Home</Link></li>
-                <li >
-                    <details>
-                        <summary>Service</summary>
-                        <ul className="p-2 lg:w-[250px]">
-                            <li className=""><Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link></li>
-                            <li><Link to={"/industrial"}>Industrial Packaging</Link></li>
-                            <li><Link to={"/foodpack"}>Food Packaging</Link></li>
-                            <li><Link to={"/garmentpack"}>Garments Packaging</Link></li>
-                        </ul>
-                    </details>
-                </li>
-                <li ><Link to={"portfolio"}>Portfolio</Link></li>
-                <li ><Link to={"/contactus"}>Contact Us</Link></li>
-                <li ><Link to={"/aboutus"}>About Us</Link></li>
-                <li ><Link to={"/knowledge"}>Knowledge</Link></li>
-                <li ><Link to={"/enquiry"}>Enquiry Cart</Link></li>
-                {/* <li ><HoverButton></HoverButton></li> */}
-                <div className="flex gap-2 ">
-                    <HoverButton></HoverButton>
-                </div>
-            </ul></>
-    )
+    const navItems = (
+        <ul className="menu menu-horizontal gap-6 text-[16px] font-medium">
+            <li><Link to="/">Home</Link></li>
+            <li>
+                <details>
+                    <summary>Services</summary>
+                    <ul className="p-2 bg-white shadow rounded w-56 z-50">
+                        <li><Link to="/e-commerce-packaging">E-commerce Packaging</Link></li>
+                        <li><Link to="/industrial">Industrial Packaging</Link></li>
+                        <li><Link to="/foodpack">Food Packaging</Link></li>
+                        <li><Link to="/garmentpack">Garments Packaging</Link></li>
+                    </ul>
+                </details>
+            </li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/contactus">Contact Us</Link></li>
+            <li><Link to="/aboutus">About Us</Link></li>
+            <li><Link to="/knowledge">Knowledge</Link></li>
+            <li><Link to="/enquiry">Enquiry Cart</Link></li>
+            <li><HoverButton /></li>
+        </ul>
+    );
 
     return (
         <>
+            {/* Top Info Bar */}
             <div className="border-b-[1px] ">
                 <div className="">
 
@@ -59,66 +46,54 @@ const Navber = () => {
 
                 </div>
             </div>
-            {/* new */}
 
 
-
-            <div className=" navbar  justify-between   w-11/12 mx-auto">
+            {/* Navbar Main */}
+            <div className="navbar bg-white shadow-md w-11/12 mx-auto py-3 px-4">
                 <div className="navbar-start">
-
-                    <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img
-                            src={logo}
-                            className=" lg:w-[300px] md:w-[250px] w-[150px]"
-                            alt=""
-                        />
-                        {/* <span className="self-center text-2xl font-semibold whitespace-nowrap ">
-                        Flowbite
-                    </span> */}
-                    </a>
+                    <Link to="/" className="flex items-center space-x-3">
+                        <img src={logo} alt="Logo" className="lg:w-72 md:w-52 w-32" />
+                    </Link>
                 </div>
+
                 <div className="navbar-center hidden lg:flex">
-                    {navber}
+                    {navItems}
                 </div>
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+
+                {/* Mobile Dropdown */}
+                <div className="navbar-end lg:hidden">
+                    <div className="dropdown dropdown-end">
+                        <button tabIndex={0} className="btn btn-ghost btn-circle">
+                            <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </button>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-56"
+                        >
+                            <li><Link to="/">Home</Link></li>
+                            <li>
+                                <details>
+                                    <summary>Services</summary>
+                                    <ul className="p-2 bg-white shadow rounded">
+                                        <li><Link to="/e-commerce-packaging">E-commerce Packaging</Link></li>
+                                        <li><Link to="/industrial">Industrial Packaging</Link></li>
+                                        <li><Link to="/foodpack">Food Packaging</Link></li>
+                                        <li><Link to="/garmentpack">Garments Packaging</Link></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li><Link to="/portfolio">Portfolio</Link></li>
+                            <li><Link to="/contactus">Contact Us</Link></li>
+                            <li><Link to="/aboutus">About Us</Link></li>
+                            <li><Link to="/knowledge">Knowledge</Link></li>
+                            <li><Link to="/enquiry">Enquiry Cart</Link></li>
+                            <li><HoverButton /></li>
+                        </ul>
                     </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu -left-40 menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><Link to={"/"}>Home</Link></li>
-                        <li>
-
-                            <details>
-                                <summary>Service
-                                </summary>
-                                <ul className="p-2">
-                                    <li><Link to={"/e-commerce-packaging"}>E-commerce Packaging</Link></li>
-                                    <li><Link to={"/industrial"}>Industrial Packaging</Link></li>
-                                    <li><Link to={"/foodpack"}>Food Packaging</Link></li>
-                                    <li><Link to={"/garmentpack"}>Garments Packaging</Link></li>
-                                    {/* <li><a>Industrial Packaging</a></li> */}
-                                </ul>
-                            </details>
-                        </li>
-                        <li><Link to={"portfolio"}>Portfolio</Link></li>
-                        <li><Link to={"/contactus"}>Contact Us</Link></li>
-                        <li><Link to={"/aboutus"}>About Us</Link></li>
-                        <li><Link to={'/knowledge'}>Knowledge</Link></li>
-                        <li><Link to={"/enquiry"}>Enquiry Cart</Link></li>
-                        <div className="flex gap-2 ">
-                            <HoverButton></HoverButton>
-
-                        </div>
-                    </ul>
                 </div>
             </div>
-
-
-            {/* old */}
-
-
         </>
     );
 };

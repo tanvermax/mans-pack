@@ -10,83 +10,67 @@ const HoverButton = () => {
     const [isShown, setIsShown] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
-    // Handle click to toggle visibility
     const handleClick = () => {
         setIsShown(prev => !prev);
     };
 
     const token = localStorage.getItem("access-token");
     const axiosSecure = useAxiosSecure();
-    // const [userDa] = userMange();
+
     useEffect(() => {
         if (user?.email && token) {
             axiosSecure.get(`/user?email=${user.email}`)
-            .then((res) => {
-                setUserData(res.data);
-            });
+                .then((res) => setUserData(res.data));
         }
     }, [user?.email, token]);
 
-    console.log(user);
-    console.log(userData);
-
-
-
-
-
     return (
         <>
-            {
-                user ? (<>
-                    <div className='flex'>
-                        <div className="relative inline-block ">
-                            {/* Primary Button */}
-                            <button
-                                className="px-5 transition-all duration-300"
-                                onMouseEnter={() => setIsHovered(true)}
-                                onMouseLeave={() => setIsHovered(false)}
-                                onClick={handleClick}
-                            >
-                                {
+            {user ? (
+                <div className="flex items-center gap-4">
+                    {/* Avatar with Hover/Click Menu */}
+                    <div className="relative">
+                        <button
+                            className="rounded-full border-2 border-gray-300 overflow-hidden hover:shadow-lg transition"
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                            onClick={handleClick}
+                        >
+                            {user.photoURL ? (
+                                <img src={user.photoURL} alt="User" className="h-10 w-10 rounded-full" />
+                            ) : (
+                                <FaUserCircle className="text-3xl text-gray-600" />
+                            )}
+                        </button>
 
-                                    user.photoURL ? <img className="lg:h-10 h-6 w-6 lg:w-10 rounded-full" src={user.photoURL}></img> : <FaUserCircle className="h-6 w-6" />
-
-                                }
-                            </button>
-
-
-
-                            {/* Secondary Button - Appears on hover OR when clicked */}
-                            <div
-                                className={`absolute top-full mt-2 left-0 transition-all duration-300 ${(isHovered || isShown)
-                                    ? 'opacity-100 transform translate-y-0 pointer-events-auto'
-                                    : 'opacity-0 transform -translate-y-2 pointer-events-none'
-                                    }`}
-                            >
-                                {
-                                    userData.role === 'admin' ? (<Link to="/dashboard/adminhome" className="btn btn-primary w-full">
-                                        Dashboard
-                                    </Link>) : null
-                                }
-                            </div>
-                        </div>
-                        <div className='lg:flex'>
-                            <div>
-                                <p className="lg:text-base text-[6px]">{user.email}</p>
-                                <p className="lg:text-base text-[6px]">{user.displayName}</p>
-                            </div>
+                        {/* Dropdown */}
+                        <div
+                            className={`absolute top-full left-0 mt-2 bg-white rounded-md shadow-md w-44 p-3 z-50 transition-all duration-300 ${
+                                isHovered || isShown ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+                            }`}
+                        >
+                            {userData.role === 'admin' && (
+                                <Link to="/dashboard/adminhome" className="block text-sm py-1 px-3 rounded hover:bg-gray-100">
+                                    Admin Dashboard
+                                </Link>
+                            )}
+                            <p className="text-xs text-gray-500 mt-2">{user.email}</p>
+                            <p className="text-xs text-gray-600">{user.displayName}</p>
                             <button
                                 onClick={logout}
-                                className="btn btn-xs p-2 lg:btn-md bg-red-300 hover:bg-red-600 text-black">
-                                Log Out
+                                className="mt-3 w-full bg-red-500 hover:bg-red-600 text-white text-sm py-1 rounded"
+                            >
+                                Logout
                             </button>
                         </div>
-                    </div></>) : <><>
-                        <Link to={"/signup"} className="btn">SignUp</Link>
-                        <Link to={"/login"} className="btn">Login</Link>
-                    </></>
-            }
-
+                    </div>
+                </div>
+            ) : (
+                <div className="flex gap-2">
+                    <Link to="/signup" className="btn btn-outline btn-sm">Sign Up</Link>
+                    <Link to="/login" className="btn btn-primary btn-sm">Login</Link>
+                </div>
+            )}
         </>
     );
 };
