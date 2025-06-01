@@ -1,9 +1,14 @@
 import React from "react";
 import Map from "../../Component/Aboutus/Map";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Mans Packaging | Contact us</title>
+      </Helmet>
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 grid-cols-1">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 const Portfolio = () => {
     const [filterType, setFilterType] = useState('All');
@@ -79,17 +80,21 @@ const Portfolio = () => {
         }
     ]
 
-    const filteredData = filterType === 'All' 
-    ? data 
-    : data.filter(item => item.type === filterType.toLowerCase());
+    const filteredData = filterType === 'All'
+        ? data
+        : data.filter(item => item.type === filterType.toLowerCase());
 
-// Button handler
-const handleFilter = (type) => {
-    setFilterType(type);
-};
-    
+    // Button handler
+    const handleFilter = (type) => {
+        setFilterType(type);
+    };
+
     return (
         <div >
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Mans Packaging | PROJECT PORTFOLIO</title>
+            </Helmet>
             <div className=' place-items-center md:p-24 bg-gray-300'>
                 <h3 className='text-xl md:text-4xl font-bold'>PROJECT PORTFOLIO</h3>
                 <p className='pt-5 md:text-xl text-xs text-center p-4'>We are always Committed to providing high-quality packaging products as per client requirements. Be Happy With Us!</p>

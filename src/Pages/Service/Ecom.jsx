@@ -2,9 +2,16 @@ import React from 'react';
 import photo from "./../../../src/assets/ecommerce-packaging.jpg"
 import photo1 from "./../../../src/assets/ecommerce-packaging-solution.png"
 import Faq from '../Faq/Faq';
+import { Helmet } from 'react-helmet';
 const Ecom = () => {
     return (
         <div className=' py-10'>
+             <Helmet>
+                <meta charSet="utf-8" />
+                <title>Mans Packaging | E-COMMERCE PACKAGING</title>
+                
+            </Helmet>
+            
             <h1 className='md:text-3xl text-xs font-bold w-11/12 mx-auto'>E-COMMERCE PACKAGING | CUSTOM SHIPPING CARTON BOXES</h1>
             <div className='md:grid flex  flex-col-reverse md:grid-cols-2 md:py-10 py-5  gap-10 w-10/12 mx-auto'>
                 <div className='place-content-center '>

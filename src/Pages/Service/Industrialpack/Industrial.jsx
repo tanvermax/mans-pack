@@ -2,9 +2,16 @@ import React from 'react';
 import photo from "./../../../../src/assets/industrial-packaging-boxes-1024x759.jpg"
 import photo2 from "./../../../../src/assets/Foresters-in-the-Woods-1024x683.jpg"
 import Hook1 from '../Hook1';
+import { Helmet } from 'react-helmet';
 
 const Industrial = () => {
     return (
+        <>
+        <Helmet>
+                <meta charSet="utf-8" />
+                <title>Mans Packaging | INDUSTRIAL PACKAGING BOXES AND SOLUTIONS</title>
+            </Helmet>
+        
         
         <Hook1
         photo={photo} 
@@ -39,7 +46,7 @@ const Industrial = () => {
         description22={`One of the ways we contribute to environmental protection is by promoting the use of corrugated packaging materials. Not only is corrugated one of the most recycled packaging materials, but it also offers a wide range of design and printing options that can help businesses meet the growing
                             demand for sustainable products and packaging solutions.`}
         description23={`Furthermore, we are constantly researching and developing new technologies and methods to minimize waste and maximize efficiency in our manufacturing processes.`}
-        description24={`At Mans Printing & Packaging, we’re united in making a positive impact.`}></Hook1>
+        description24={`At Mans Printing & Packaging, we’re united in making a positive impact.`}></Hook1></>
     );
 };
 

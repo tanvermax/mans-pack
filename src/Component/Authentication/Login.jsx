@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../Provider/useAuth";
 import Social from "./Social";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { loginwithemail } = useAuth();
@@ -23,7 +24,7 @@ const Login = () => {
         // window.location.reload(false);
       })
       .catch((error) => {
-        
+
         const errorCode = error.code;
         const errorMessage = error.message;
 
@@ -46,6 +47,10 @@ const Login = () => {
 
   return (
     <div className=" lg:max-w-xl bg-amber-50 lg:rounded-lg shadow-lg lg:p-8 p-10 lg:mx-auto">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Mans Packaging | Log In </title>
+      </Helmet>
       <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
         Welcome Back!
       </h2>
@@ -61,11 +66,10 @@ const Login = () => {
             {...register("email", {
               required: "Email is required",
             })}
-            className={`w-full px-4 py-2 mt-2 border rounded-lg focus:ring-2 ${
-              errors.email
+            className={`w-full px-4 py-2 mt-2 border rounded-lg focus:ring-2 ${errors.email
                 ? "border-red-500 focus:ring-red-500"
                 : "focus:ring-blue-400"
-            }`}
+              }`}
           />
           {errors.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -87,11 +91,10 @@ const Login = () => {
                 message: "Password must be at least 6 characters",
               },
             })}
-            className={`w-full px-4 py-2 mt-2 border rounded-lg focus:ring-2 ${
-              errors.password
+            className={`w-full px-4 py-2 mt-2 border rounded-lg focus:ring-2 ${errors.password
                 ? "border-red-500 focus:ring-red-500"
                 : "focus:ring-blue-400"
-            }`}
+              }`}
           />
           {errors.password && (
             <p className="text-red-500 text-sm mt-1">

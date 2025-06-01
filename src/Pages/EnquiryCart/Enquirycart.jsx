@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { CartContext } from './CartContext';
+import { Helmet } from 'react-helmet';
 
 const CartItem = ({ item, removeFromCart, updateQuantity }) => (
   <motion.div
@@ -82,6 +83,10 @@ const Enquirycart = () => {
 
   return (
     <div className="container mx-auto p-4">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Mans Packaging | Enquiry Cart</title>
+      </Helmet>
       <h1 className="text-3xl font-bold mb-6 text-center">Enquiry Cart</h1>
       {cart.length === 0 ? (
         <motion.div

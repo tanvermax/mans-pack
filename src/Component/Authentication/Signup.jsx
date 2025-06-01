@@ -7,6 +7,7 @@ import useAuth from '../../Provider/useAuth';
 import useAxiosSecure from '../../Hook/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Signup = () => {
   const { setUser, handlenewuser } = useAuth();
@@ -55,6 +56,10 @@ const Signup = () => {
 
   return (
     <div className="hero bg-teal-100 min-h-screen flex items-center justify-center">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Mans Packaging | Sign up</title>
+      </Helmet>
       <motion.div
         className="max-w-4xl max-sm:max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg"
         initial={{ opacity: 0, y: 50 }}

@@ -6,10 +6,15 @@ import Ourservice from '../Ourservice/Ourservice';
 import Amessage from '../Amessage/Amessage';
 import Ourclient from '../Ourclient/Ourclient';
 import Newspart from '../Newspaert/Newspart';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     return (
         <div>
+             <Helmet>
+                <meta charSet="utf-8" />
+                <title>Mans Packaging | Home</title>
+            </Helmet>
             <Banner></Banner>
             <Newspart></Newspart>
             <Section1></Section1>

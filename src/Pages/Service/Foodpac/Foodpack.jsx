@@ -1,14 +1,20 @@
 import React from 'react';
 import Hook1 from '../Hook1';
+import { Helmet } from 'react-helmet';
 // import photo from "./../../../../src/assets/"
 // import photo2 from "./../../../../src/assets/Foresters-in-the-Woods-1024x683.jpg"
 
 const Foodpack = () => {
-    return (
-        <Hook1
+  return (
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Mans Packaging | FOOD PACKAGING BOXES AND SOLUTIONS</title>
+      </Helmet>
+      <Hook1
         photo2={`https://manspackaging.com/wp-content/uploads/2023/02/custom-food-carton-box-1024x683.jpg`}
-      photo={"https://manspackaging.com/wp-content/uploads/2023/02/food-packaging-boxes-1024x683.jpg"}
-        mainheading={"FOOD PACKAGING BOXES AND SOLUTIONS"} 
+        photo={"https://manspackaging.com/wp-content/uploads/2023/02/food-packaging-boxes-1024x683.jpg"}
+        mainheading={"FOOD PACKAGING BOXES AND SOLUTIONS"}
         headin1={"Fresh & Secure: Elevate Your Food Brand with Custom Food Boxes"}
         headin2={`CUSTOM FOOD PACKAGING
 The Key to Unlocking Your Product’s Potential.`}
@@ -21,10 +27,11 @@ The Key to Unlocking Your Product’s Potential.`}
         description2={`Our custom food packaging solutions are designed to protect the food and keep it fresh for as long as possible. From crackers and cereal to artisan chocolates and gourmet ice cream, our team of experts will work with you to create a custom folding carton packaging solution that meets your unique needs.`}
         description22={`Our extensive substrate portfolio and coatings knowledge, combined with robust design and printing enhancements, means that we are able to provide a solution that not only protects your food but also showcases your brand and sets you apart from your competition. Whether you need a packaging solution that is eco-friendly, eye-catching or cost-effective, we have the expertise and resources to help.`}
         description23={`Protect your products and stand out on the shelf with our food packaging solutions in Bangladesh. `}
-        // description24={`At Mans Printing & Packaging, we’re united in making a positive impact.`}
-        >
-        </Hook1>
-    );
+      // description24={`At Mans Printing & Packaging, we’re united in making a positive impact.`}
+      >
+      </Hook1>
+    </>
+  );
 };
 
 export default Foodpack;
