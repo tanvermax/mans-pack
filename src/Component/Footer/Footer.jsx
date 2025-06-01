@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaEnvelope, FaFacebookF, FaFax, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaEnvelope, FaFacebookF, FaFax, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaPinterest, FaTiktok } from 'react-icons/fa';
 import photo1 from "./../../../src/assets/MansPackaging2.png"
+import { IoLogoYoutube } from 'react-icons/io';
 const Footer = () => {
     return (
         <div>
@@ -20,17 +20,28 @@ const Footer = () => {
 
                     {/* Social Icons */}
                     <div className="flex justify-center space-x-9 mt-5">
-                        <a href="#" className="text-blue-500 hover:scale-110 transition duration-300">
+                        <a href="https://www.facebook.com/manspacking" className="text-blue-500 hover:scale-110 transition duration-300">
                             <FaFacebookF size={24} />
                         </a>
-                        <a href="#" className="text-blue-700 hover:scale-110 transition duration-300">
+                        <a href="https://www.linkedin.com/company/manspackaging/" className="text-blue-700 hover:scale-110 transition duration-300">
                             <FaLinkedinIn size={24} />
                         </a>
-                        <a href="#" className="text-pink-500 hover:scale-110 transition duration-300">
+                        <a href="https://www.instagram.com/manspackaging/" className="text-pink-500 hover:scale-110 transition duration-300">
                             <FaInstagram size={24} />
                         </a>
-                        <a href="#" className="text-gray-300 hover:scale-110 transition duration-300">
-                            <FaXTwitter size={24} />
+                        <a href="https://www.pinterest.com/manspacking/" className="text-gray-300 hover:scale-110 transition duration-300">
+                        <FaPinterest size={24} />
+                            
+                        </a>
+                        <a href="https://www.youtube.com/@MansPackaging" className="text-gray-300 hover:scale-110 transition duration-300">
+                        <IoLogoYoutube size={24}/>
+
+                            
+                        </a>
+                        <a href="=https://www.tiktok.com/@mans.packaging" className="text-gray-300 hover:scale-110 transition duration-300">
+                        <FaTiktok size={24}/>
+
+                            
                         </a>
                     </div>
 
@@ -47,16 +58,14 @@ const Footer = () => {
                             <FaEnvelope size={22} className="text-blue-400 mb-2" />
                             <div className='text-left'>
                                 <p className="text-sm text-gray-400">Mail</p>
-                                <p className="text-white font-medium">contact@manspackaging.com</p>
+                                <p className="text-white font-medium">manspacking@gmail.com</p>
                             </div>
                         </div>
                         <div className="flex gap-5 items-center">
                             <FaMapMarkerAlt size={22} className="text-blue-400 mb-2" />
                             <div className=' text-left'>
                                 <p className="text-sm text-gray-400">Address</p>
-                                <p className="text-white font-medium">Sonir Akhra, Midhra bari Road
-
-Jatrabari, Dhaka-1362</p>
+                                <p className="text-white font-medium">Sonir akhra, mridha bari road, Dhaka-1362</p>
                             </div>
                         </div>
                         {/* <div className="flex gap-5 items-center">

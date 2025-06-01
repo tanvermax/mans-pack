@@ -37,11 +37,11 @@ const Navber = () => {
 
                     <ul className="lg:text-[15px] md:text-[10px] text-[6px] flex lg:gap-10 gap-1 md:gap-10 justify-center lg:py-2 py-1 items-center w-11/12 mx-auto">
                         <li> +8801787-108216</li>
-                        <li>contact:@manspackaging.com</li>
-                        <li>Sonir Akhra, Jatrabari, Dhaka</li>
-                        <li className="text-blue-700 lg:text-xl"><FaFacebook /></li>
-                        <li className="text-[#0077B5] lg:text-xl"><FaLinkedin /></li>
-                        <li className="text-[#c13584] lkg:text-xl"><CiInstagram /></li>
+                        <li>contact:manspacking@gmail.com</li>
+                        <li>Sonir akhra, mridha bari road, Dhaka-1362</li>
+                        <Link to={"https://www.facebook.com/manspacking"} className="text-blue-700 lg:text-xl"><FaFacebook /></Link>
+                        <Link to={"https://www.linkedin.com/company/manspackaging/"} className="text-[#0077B5] lg:text-xl"><FaLinkedin /></Link>
+                        <Link to={"https://www.instagram.com/manspackaging/"} className="text-[#c13584] lkg:text-xl"><CiInstagram /></Link>
                     </ul>
 
                 </div>

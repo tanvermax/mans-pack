@@ -16,11 +16,14 @@ const Home = () => {
                 <title>Mans Packaging | Home</title>
             </Helmet>
             <Banner></Banner>
-            <Newspart></Newspart>
-            <Section1></Section1>
-            <Aboutus></Aboutus>
             <Ourservice></Ourservice>
+            <Aboutus></Aboutus>
+            <Newspart></Newspart>
             <Amessage></Amessage>
+            <Section1></Section1>
+          
+            
+           
             <Ourclient></Ourclient>
         </div>
     );
