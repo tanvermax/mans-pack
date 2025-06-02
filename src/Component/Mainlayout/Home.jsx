@@ -13,14 +13,16 @@ const Home = () => {
         <div>
              <Helmet>
                 <meta charSet="utf-8" />
-                <title>Mans Packaging | Home</title>
+                <title>Mans Packaging - Corrugated Packaging in Bangladesh.</title>
             </Helmet>
             <Banner></Banner>
-            <Ourservice></Ourservice>
+            <Section1></Section1>
+
             <Aboutus></Aboutus>
+            <Ourservice></Ourservice>
+
             <Newspart></Newspart>
             <Amessage></Amessage>
-            <Section1></Section1>
           
             
            
