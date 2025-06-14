@@ -105,9 +105,9 @@ const Ourclient = () => {
                         {[...logos, ...logos].map((logo, index) => (
                             <motion.img
                                 whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                                whileDrag={{ scale: 0.9, rotate: 10 }}
-                                drag key={index} src={logo.photoname} alt="Client Logo" className="h-16 " />
+                                
+                               
+                                src={logo.photoname} alt="Client Logo" className="h-16 " />
                         ))}
                     </motion.div>
                 </div>
