@@ -86,9 +86,9 @@ const Newspart = () => {
                             >
                                 <div className="md:flex items-center mb-6">
                                     <img
-                                        src="https://pagedone.io/asset/uploads/1696244553.png"
+                                        src={newsdata.photoUrl}
                                         alt="Harsh image"
-                                        className="rounded-lg  object-cover"
+                                        className="rounded-lg h-100 object-cover"
                                     />
                                     <div className="block p-5">
                                         <h4 className="text-gray-900 lg:text-base text-xs font-medium md:leading-8 ">
@@ -96,7 +96,7 @@ const Newspart = () => {
                                         </h4>
                                         <p className='py-3'>{newsdata.description}</p>
                                         <div className="flex gap-5 items-center justify-between font-medium">
-                                            <h6 className="text-sm text-gray-500">By Harsh C.</h6>
+                                            <h6 className="text-sm text-gray-500">By MANS Pack C.</h6>
                                             <span className="text-sm text-indigo-600">2 year ago</span>
                                         </div>
                                     </div>
