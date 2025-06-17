@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify';
 const Mainlayout = () => {
     // const nodeaderfooter = location.pathname.includes('dashboard')
     return (
-        <div className='overflow-x-hidden '>
+        <div className=' '>
             <ToastContainer></ToastContainer>
             <div className="border-b-[1px]">
                 <div className="">
@@ -34,7 +34,7 @@ const Mainlayout = () => {
 
                 </div>
             </div>
-            <div className='sticky top-0 z-10  backdrop-blur-3xl'>
+            <div className='sticky -top-1 lg:top-0 z-10  backdrop-blur-3xl'>
 
             <Navber></Navber>
             </div>

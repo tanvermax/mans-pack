@@ -35,14 +35,14 @@ const Navber = () => {
 
 
             {/* Navbar Main */}
-            <div className="  navbar   w-11/12 mx-auto py-1 px-4">
+            <div className="flex overflow-y-hidden  navbar py-1 lg:px-32">
                 <div className="navbar-start">
-                    <Link to="/" className="flex items-center space-x-3">
+                    <Link to="/" className="flex items-center ">
                         <img src={logo} alt="Logo" className="lg:w-72 md:w-52 w-32" />
                     </Link>
                 </div>
 
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center  hidden lg:flex">
                     {navItems}
                 </div>
 
