@@ -7,7 +7,7 @@ const Aboutus = () => {
         <div className='w-11/12 mx-auto font-semibold'>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Mans Packaging | About Mans Packaging</title>
+                <title>About Mans Packaging | Mans Packaging</title>
             </Helmet>
             <img src={photo} alt="" />
             <h3 className='md:text-5xl font-bold py-7'>About Mans Packaging</h3>

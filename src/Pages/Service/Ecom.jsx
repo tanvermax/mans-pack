@@ -8,7 +8,7 @@ const Ecom = () => {
         <div className=' py-10'>
              <Helmet>
                 <meta charSet="utf-8" />
-                <title>Mans Packaging | E-COMMERCE PACKAGING</title>
+                <title>E-COMMERCE PACKAGING | Mans Packaging</title>
                 
             </Helmet>
             

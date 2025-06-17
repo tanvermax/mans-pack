@@ -7,7 +7,7 @@ const Garmentpack = () => {
         <>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Mans Packaging | Garments Packaging Boxes And Solutions</title>
+                <title>Garments Packaging Boxes And Solutions | Mans Packaging</title>
             </Helmet>
 
             <Hook1

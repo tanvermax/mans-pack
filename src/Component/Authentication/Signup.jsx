@@ -60,7 +60,7 @@ const Signup = () => {
     <div className="hero bg-teal-100 min-h-screen flex items-center justify-center">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Mans Packaging | Sign up</title>
+        <title>Sign Up | Mans Packaging</title>
       </Helmet>
       <motion.div
         className="max-w-4xl max-sm:max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg"

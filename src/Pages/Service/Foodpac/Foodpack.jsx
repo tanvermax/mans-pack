@@ -9,7 +9,7 @@ const Foodpack = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Mans Packaging | FOOD PACKAGING BOXES AND SOLUTIONS</title>
+        <title>FOOD PACKAGING BOXES AND SOLUTIONS | Mans Packaging</title>
       </Helmet>
       <Hook1
         photo2={`https://manspackaging.com/wp-content/uploads/2023/02/custom-food-carton-box-1024x683.jpg`}

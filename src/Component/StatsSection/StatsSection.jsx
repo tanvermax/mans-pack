@@ -1,0 +1,58 @@
+import { Briefcase, Globe, Star, Coffee } from 'lucide-react';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
+
+const stats = [
+    {
+        icon: <Briefcase className="w-8 h-8 " />,
+        number: 14000,
+        suffix: '+',
+        label: 'PROJECT DONE',
+    },
+    {
+        icon: <Globe className="w-8 h-8 " />,
+        number: 84,
+        suffix: '+',
+        label: 'HAPPY CUSTOMERS',
+    },
+    {
+        icon: <Star className="w-8 h-8 " />,
+        number: 4.7,
+        suffix: '',
+        label: 'CLIENT RATING',
+    },
+    {
+        icon: <Coffee className="w-8 h-8 " />,
+        number: 15,
+        suffix: '+',
+        label: 'YEARS EXPERIENCE',
+    },
+];
+
+
+const StatsSection = () => {
+
+
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
+    return (
+        <div ref={ref} className="bg-blue-900 text-white py-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {stats.map((stat, index) => (
+          <div key={index} className="flex flex-col items-center space-y-2">
+            {stat.icon}
+            <div className="text-2xl font-bold">
+              {inView ? (
+                <CountUp end={stat.number} duration={2} suffix={stat.suffix} />
+              ) : (
+                `0${stat.suffix}`
+              )}
+            </div>
+            <div className="text-sm tracking-widest">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+    );
+};
+
+export default StatsSection;

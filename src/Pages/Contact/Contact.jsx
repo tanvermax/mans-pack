@@ -7,7 +7,7 @@ const Contact = () => {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Mans Packaging | Contact us</title>
+        <title>Contact Us | Mans Packaging</title>
       </Helmet>
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

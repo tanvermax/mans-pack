@@ -85,7 +85,7 @@ const Enquirycart = () => {
     <div className="container mx-auto p-4">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Mans Packaging | Enquiry Cart</title>
+        <title>Enquiry Cart | Mans Packaging</title>
       </Helmet>
       <h1 className="text-3xl font-bold mb-6 text-center">Enquiry Cart</h1>
       {cart.length === 0 ? (

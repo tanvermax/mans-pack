@@ -7,25 +7,22 @@ import Amessage from '../Amessage/Amessage';
 import Ourclient from '../Ourclient/Ourclient';
 import Newspart from '../Newspaert/Newspart';
 import { Helmet } from 'react-helmet';
+import StatsSection from '../StatsSection/StatsSection';
 
 const Home = () => {
     return (
         <div>
              <Helmet>
                 <meta charSet="utf-8" />
-                <title>Mans Packaging - Corrugated Packaging in Bangladesh.</title>
+                <title>Corrugated Packaging in Bangladesh-Mans Packaging.</title>
             </Helmet>
             <Banner></Banner>
             <Section1></Section1>
-
             <Aboutus></Aboutus>
             <Ourservice></Ourservice>
-
             <Newspart></Newspart>
             <Amessage></Amessage>
-          
-            
-           
+            <StatsSection></StatsSection>
             <Ourclient></Ourclient>
         </div>
     );

@@ -7,7 +7,7 @@ const Knowledge = () => {
         <div className='py-10'>
            <Helmet>
                 <meta charSet="utf-8" />
-                <title>Mans Packaging | knowledge panel</title>
+                <title>Knowledge panel | Mans Packaging</title>
             </Helmet>
           <div className='w-10/12 mx-auto mt-5 grid md:grid-cols-5'>
             <h3 className='md:text-4xl uppercase col-span-2 font-bold'>knowledge panel</h3>

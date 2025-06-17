@@ -9,7 +9,7 @@ const Industrial = () => {
         <>
         <Helmet>
                 <meta charSet="utf-8" />
-                <title>Mans Packaging | INDUSTRIAL PACKAGING BOXES AND SOLUTIONS</title>
+                <title>INDUSTRIAL PACKAGING BOXES AND SOLUTIONS | Mans Packaging</title>
             </Helmet>
         
         

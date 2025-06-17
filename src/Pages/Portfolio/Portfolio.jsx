@@ -93,7 +93,7 @@ const Portfolio = () => {
         <div >
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Mans Packaging | PROJECT PORTFOLIO</title>
+                <title>PROJECT PORTFOLIO | Mans Packaging</title>
             </Helmet>
             <div className=' place-items-center md:p-24 bg-gray-300'>
                 <h3 className='text-xl md:text-4xl font-bold'>PROJECT PORTFOLIO</h3>

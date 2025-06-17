@@ -49,7 +49,7 @@ const Login = () => {
     <div className=" lg:max-w-xl bg-amber-50 lg:rounded-lg shadow-lg lg:p-8 p-10 lg:mx-auto">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Mans Packaging | Log In </title>
+        <title>Log In | Mans Packaging</title>
       </Helmet>
       <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
         Welcome Back!
