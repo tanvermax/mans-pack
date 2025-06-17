@@ -31,7 +31,7 @@ const features = [
 const Section1 = () => {
   return (
     <section className="w-11/12 mx-auto py-10 lg:py-20">
-      <div className="grid grid-cols-4  gap-6">
+      <div className="grid lg:grid-cols-4 grid-cols-2  lg:gap-6 gap-2">
         {features.map((feature, index) => (
           <motion.div
             key={index}
@@ -42,8 +42,8 @@ const Section1 = () => {
             transition={{ duration: 0.8, delay: index * 0.2 }}
           >
             <div className="text-4xl text-[#e69f06] w-10 mb-4 mx-auto">{feature.icon}</div>
-            <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-            <p className="text-gray-600 text-sm lg:text-base">{feature.description}</p>
+            <h3 className="lg:text-xl text-base font-semibold mb-2">{feature.title}</h3>
+            <p className="text-gray-600 text-xs lg:text-base">{feature.description}</p>
           </motion.div>
         ))}
       </div>

@@ -39,7 +39,7 @@ const AllNews = () => {
             >
               <div className="flex items-center mb-6">
                 <img
-                  src="https://pagedone.io/asset/uploads/1696244553.png"
+                  src={newsdata.photoUrl}
                   alt="Harsh image"
                   className="rounded-lg w-full object-cover"
                 />
@@ -49,7 +49,7 @@ const AllNews = () => {
                   {newsdata.headline}
                 </h4>
                 <div className="flex items-center justify-between font-medium">
-                  <h6 className="text-sm text-gray-500">By Harsh C.</h6>
+                  <h6 className="text-sm text-gray-500">Mans Packaging C.</h6>
                   <span className="text-sm text-indigo-600">2 year ago</span>
                 </div>
               </div>

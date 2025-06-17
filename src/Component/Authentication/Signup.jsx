@@ -8,12 +8,14 @@ import useAxiosSecure from '../../Hook/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import useaxiospublic from '../../Hook/useaxiospublic';
 
 const Signup = () => {
   const { setUser, handlenewuser } = useAuth();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const password = watch("password");
-  const axiosSecure = useAxiosSecure();
+  // const axiosSecure = useAxiosSecure();
+ const axioxpublic = useaxiospublic();
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
@@ -30,7 +32,7 @@ const Signup = () => {
 
       setUser(result.user)
     }
-    axiosSecure.post('/user', user)
+    axioxpublic.post('/user', user)
       .then(res => {
         console.log(res.data);
         if (res.data.insertedId) {

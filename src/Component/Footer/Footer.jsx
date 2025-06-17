@@ -19,7 +19,7 @@ const Footer = () => {
                     </div>
 
                     {/* Social Icons */}
-                    <div className="flex justify-center space-x-9 mt-5">
+                    <div className="flex justify-center lg:space-x-9 space-x-5 mt-5">
                         <a href="https://www.facebook.com/manspacking" className="text-blue-500 hover:scale-110 transition duration-300">
                             <FaFacebookF size={24} />
                         </a>

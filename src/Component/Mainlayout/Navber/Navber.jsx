@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./../../../assets/manspackaginglogo.png";
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
-import { CiInstagram } from "react-icons/ci";
+
 import HoverButton from "./HoverButton";
 
 const Navber = () => {
@@ -32,24 +31,11 @@ const Navber = () => {
     return (
         <>
             {/* Top Info Bar */}
-            <div className="border-b-[1px] ">
-                <div className="">
-
-                    <ul className="lg:text-[15px] md:text-[10px] text-[6px] flex lg:gap-10 gap-1 md:gap-10 justify-center lg:py-2 py-1 items-center w-11/12 mx-auto">
-                        <li> +8801787-108216</li>
-                        <li>contact:manspacking@gmail.com</li>
-                        <li>Sonir akhra, mridha bari road, Dhaka-1362</li>
-                        <Link to={"https://www.facebook.com/manspacking"} className="text-blue-700 lg:text-xl"><FaFacebook /></Link>
-                        <Link to={"https://www.linkedin.com/company/manspackaging/"} className="text-[#0077B5] lg:text-xl"><FaLinkedin /></Link>
-                        <Link to={"https://www.instagram.com/manspackaging/"} className="text-[#c13584] lkg:text-xl"><CiInstagram /></Link>
-                    </ul>
-
-                </div>
-            </div>
+           
 
 
             {/* Navbar Main */}
-            <div className="navbar bg-white shadow-md w-11/12 mx-auto py-3 px-4">
+            <div className="  navbar   w-11/12 mx-auto py-1 px-4">
                 <div className="navbar-start">
                     <Link to="/" className="flex items-center space-x-3">
                         <img src={logo} alt="Logo" className="lg:w-72 md:w-52 w-32" />
