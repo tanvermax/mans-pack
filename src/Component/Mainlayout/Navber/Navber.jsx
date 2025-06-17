@@ -35,7 +35,7 @@ const Navber = () => {
 
 
             {/* Navbar Main */}
-            <div className="flex overflow-y-hidden  navbar py-1 lg:px-32">
+            <div className="flex  w-10/12 mx-auto py-1 lg:px-4">
                 <div className="navbar-start">
                     <Link to="/" className="flex items-center ">
                         <img src={logo} alt="Logo" className="lg:w-72 md:w-52 w-32" />
