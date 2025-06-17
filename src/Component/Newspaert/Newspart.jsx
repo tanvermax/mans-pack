@@ -88,13 +88,13 @@ const Newspart = () => {
                                     <img
                                         src={newsdata.photoUrl}
                                         alt="Harsh image"
-                                        className="rounded-lg h-100 object-cover"
+                                        className="rounded-lg lg:h-100 h-80 mx-auto object-cover"
                                     />
                                     <div className="block p-5">
-                                        <h4 className="text-gray-900 lg:text-base text-xs font-medium md:leading-8 ">
+                                        <h4 className="text-gray-900 lg:text-3xl text-base my-4 font-semibold  md:leading-8 ">
                                             {newsdata.headline}
                                         </h4>
-                                        <p className='py-3'>{newsdata.description}</p>
+                                        <p className='py-3 lg:text-base text-xs'>{newsdata.description}</p>
                                         <div className="flex gap-5 items-center justify-between font-medium">
                                             <h6 className="text-sm text-gray-500">By MANS Pack C.</h6>
                                             <span className="text-sm text-indigo-600">2 year ago</span>
