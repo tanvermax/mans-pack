@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useaxiospublic from '../../Hook/useaxiospublic';
+import { toast } from 'react-toastify';
 
 const UpdateBanner = () => {
     const loadData = useLoaderData();
@@ -10,8 +11,8 @@ const UpdateBanner = () => {
         description: loadData.description || ''
     });
     const axiospublic = useaxiospublic();
-    
 
+    console.log(loadData);
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -22,22 +23,17 @@ const UpdateBanner = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         try {
-            const response = await fetch(`/api/banners/${loadData._id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            });
 
-            if (!response.ok) {
-                throw new Error('Failed to update banner');
+
+          const response =   await axiospublic.put(`banner/${loadData._id}`, formData)
+        
+            // const result = await response.json();
+            // console.log('Update successful:', response);
+            if (response.status==200) {
+                toast.success("Update successful")
             }
-
-            const result = await response.json();
-            console.log('Update successful:', result);
             // You might want to add a success message or redirect here
         } catch (error) {
             console.error('Error updating banner:', error);
@@ -48,7 +44,7 @@ const UpdateBanner = () => {
     return (
         <div className='p-5 max-w-4xl mx-auto'>
             <h1 className='text-2xl font-bold mb-6'>Update Banner: {loadData._id}</h1>
-            
+
             <form onSubmit={handleSubmit} className='space-y-4'>
                 <div className='space-y-2'>
                     <label htmlFor='image' className='block text-sm font-medium text-gray-700'>
