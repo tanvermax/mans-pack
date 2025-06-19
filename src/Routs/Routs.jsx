@@ -48,7 +48,7 @@ export const Routs = createBrowserRouter([
                     {
                         path:"banner/:id",
                         element:<UpdateBanner/>,
-                        loader: ({params}) => fetch(`http://localhost:5000/banner/${params.id}`),
+                        loader: ({params}) => fetch(`https://man-pack-server.vercel.app/banner/${params.id}`),
                     },
                     {
                         path:"dynamicbanner",
