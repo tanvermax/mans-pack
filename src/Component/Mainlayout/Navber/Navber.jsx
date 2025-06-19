@@ -6,7 +6,7 @@ import HoverButton from "./HoverButton";
 
 const Navber = () => {
     const navItems = (
-        <ul className="menu menu-horizontal gap-6 text-[16px] font-medium">
+        <ul className="menu items-center menu-horizontal gap-6 text-[16px] font-medium">
             <li><Link to="/">Home</Link></li>
             <li>
                 <details>
@@ -35,7 +35,7 @@ const Navber = () => {
 
 
             {/* Navbar Main */}
-            <div className="flex  w-10/12 mx-auto py-1 lg:px-4">
+            <div className="flex  w-10/12 mx-auto py-1 items-center lg:px-4">
                 <div className="navbar-start">
                     <Link to="/" className="flex items-center ">
                         <img src={logo} alt="Logo" className="lg:w-72 md:w-52 w-32" />
@@ -47,7 +47,7 @@ const Navber = () => {
                 </div>
 
                 {/* Mobile Dropdown */}
-                <div className="navbar-end lg:hidden">
+                <div className="navbar-end  lg:hidden">
                     <div className="dropdown dropdown-end">
                         <button tabIndex={0} className="btn btn-ghost btn-circle">
                             <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">

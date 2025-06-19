@@ -14,7 +14,7 @@ const Home = () => {
         <div>
              <Helmet>
                 <meta charSet="utf-8" />
-                <title>Corrugated Packaging in Bangladesh-Mans Packaging.</title>
+                <title>Mans Packaging-Packaging Manufacturer in Bangladesh.</title>
             </Helmet>
             <Banner></Banner>
             <Section1></Section1>

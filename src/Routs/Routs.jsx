@@ -21,6 +21,8 @@ import Knowledge from "../Pages/Knowledge/Knowledge";
 import EnquiryCart from "../Pages/EnquiryCart/Enquirycart";
 import Products from "../Pages/EnquiryCart/Products";
 import PrivateRoute from "../Hook/PrivateRoute";
+import Dynamicbanner from "../Admin/Dynamicbanner/Dynamicbanner";
+import UpdateBanner from "../Admin/Dynamicbanner/UpdateBanner";
 // import PrivateRoute from './PrivateRoute';
 
 export const Routs = createBrowserRouter([
@@ -42,6 +44,15 @@ export const Routs = createBrowserRouter([
                         element: <UserDetails></UserDetails>,
                         loader: () => fetch("https://man-pack-server.vercel.app/user"),
 
+                    },
+                    {
+                        path:"banner/:id",
+                        element:<UpdateBanner/>,
+                        loader: ({params}) => fetch(`http://localhost:5000/banner/${params.id}`),
+                    },
+                    {
+                        path:"dynamicbanner",
+                        element: <Dynamicbanner></Dynamicbanner>
                     },
                     {
                         path: "adminhome",

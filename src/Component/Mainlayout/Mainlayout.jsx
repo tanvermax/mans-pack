@@ -34,7 +34,7 @@ const Mainlayout = () => {
 
                 </div>
             </div>
-            <div className='sticky -top-1 lg:top-0 z-10  backdrop-blur-3xl'>
+            <div className='bg-white sticky -top-1 lg:top-0 z-10  backdrop-blur-3xl'>
 
             <Navber></Navber>
             </div>
