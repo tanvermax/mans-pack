@@ -5,7 +5,7 @@ const FloatingChat = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-10 flex flex-col items-end space-y-2">
+    <div className="z-50 fixed bottom-6 right-10 flex flex-col items-end space-y-2">
       {open && (
         <div className="space-y-2 grid grid-rows-2">
           <button

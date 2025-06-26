@@ -5,27 +5,27 @@ import { useInView } from 'react-intersection-observer';
 const stats = [
     {
         icon: <Briefcase className="w-8 h-8 " />,
-        number: 14000,
+        number: 25000,
         suffix: '+',
-        label: 'PROJECT DONE',
+        label: 'Production capacity: ',
     },
     {
         icon: <Globe className="w-8 h-8 " />,
-        number: 84,
+        number: 50,
         suffix: '+',
-        label: 'HAPPY CUSTOMERS',
+        label: 'Employees',
     },
     {
         icon: <Star className="w-8 h-8 " />,
-        number: 4.7,
-        suffix: '',
-        label: 'CLIENT RATING',
+        number: 1500,
+        suffix: '+',
+        label: 'Project Complete',
     },
     {
         icon: <Coffee className="w-8 h-8 " />,
-        number: 15,
-        suffix: '+',
-        label: 'YEARS EXPERIENCE',
+        number: 2020,
+        suffix: '',
+        label: 'Foundation Year',
     },
 ];
 
@@ -35,7 +35,7 @@ const StatsSection = () => {
 
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
     return (
-        <div ref={ref} className="bg-blue-900 text-white py-10">
+        <div ref={ref} className=" bg-blue-900 text-white py-20">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center space-y-2">
