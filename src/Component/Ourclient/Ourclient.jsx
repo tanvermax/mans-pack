@@ -87,11 +87,11 @@ const Ourclient = () => {
     ]
 
     return (
-        <div className=' mx-auto place-items-center py-15 bg-gray-100'>
+        <div className=' mx-auto place-items-center py-15 overflow-hidden bg-gray-100'>
             <h2 className='lg:text-5xl text-xl font-bold lg:py-4'>Our Clients</h2>
             <p className='lg:text-xl text-xs text-gray-500 pb-10'>Pleasure to work with</p>
             <div>
-                <div className="overflow-hidden  py-6">
+                <div className=" py-6">
                     <motion.div
                         className="flex space-x-10 w-[98vw] "
                         initial={{ x: "10%" }}

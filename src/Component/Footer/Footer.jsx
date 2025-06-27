@@ -65,7 +65,7 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <p className="lg:mt-2 mt-14 lg:leading-9 leading-7 px-2 max-w-xl lg:text-base text-xs text-gray-400 ">
+                        <p className="lg:mt-2 hidden md:block mt-14 lg:leading-9 leading-7 px-2 max-w-xl lg:text-base text-xs text-gray-400 ">
                             Mans Packaging is a paper-based packaging manufacturing company in Bangladesh. We provide packaging service for Food , Cosmetics, ecommerce, Jewelry, Ceramics, Glassware’s, Pharmaceuticals, Bakery & pastry, Agriculture, & etc.
                         </p>
                         {/* <a href="#" className="text-blue-400 hover:text-blue-300 mt-2 inline-block font-semibold">
@@ -78,8 +78,8 @@ const Footer = () => {
 
 
                     {/* Footer Bottom */}
-                    <div className="border-t border-gray-700 mt-6 pt-4  text-gray-400 lg:text-base text-xs">
-                        <div className="flex justify-between mt-5  px-20 ">
+                    <div className="border-t  border-gray-700 md:mt-6 lg:pt-4  text-gray-400 lg:text-base text-xs">
+                        <div className="flex justify-between mt-5  md:px-20 ">
                             <a href="#" className="hover:text-white">Terms of Service</a>
                             <a href="#" className="hover:text-white">Privacy Policy</a>
                             <a href="#" className="hover:text-white">Security</a>
@@ -90,7 +90,7 @@ const Footer = () => {
                 </div>
             </footer>
             <div className=' bg-[#1E293B]'>
-                <p className=" w-2xl mx-auto text-gray-500 text-center md:text-left">&copy; 2025 Copyright by Mans Packaging | Developed by <a href="https://portfolio-e021a.web.app" target="_blank">tanver</a> </p>
+                <p className="md:px-40 text-[6px] md:text-[10px] lg:text-base lg:w-xl mx-auto text-gray-500 text-center md:text-left">&copy; 2025 Copyright by Mans Packaging | Developed by <a href="https://portfolio-e021a.web.app" target="_blank">tanver</a> </p>
             </div>
         </div>
     );

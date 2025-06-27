@@ -16,7 +16,7 @@ const Amessage = () => {
                 />
                 <figure className="mt-10">
                     <blockquote className="text-center lg:text-xl/8 font-semibold text-gray-900 sm:text-2xl/9">
-                        <p>
+                        <p className='md:text-base text-[12px]'>
                             “Packaging is not just about protecting products, it’s about creating an experience and telling a story. Let Mans Printing and Packaging help you bring your brand to life through custom packaging solutions.”
                         </p>
                     </blockquote>

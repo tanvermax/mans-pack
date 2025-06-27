@@ -82,7 +82,7 @@ const Newspart = () => {
                         {data.map((newsdata) => (
                             <div
                                 key={newsdata._id}
-                                className="group cursor-pointer w-full border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-indigo-600 snap-start shrink-0"
+                                className="group cursor-pointer w-full border border-gray-300 rounded-2xl md:p-5 transition-all duration-300 hover:border-indigo-600 snap-start shrink-0"
                             >
                                 <div className="md:flex items-center mb-6">
                                     <img
@@ -127,7 +127,7 @@ const Newspart = () => {
                 </div>
                 <Link
                     to="/newspart"
-                    className="cursor-pointer border border-gray-300 shadow-sm rounded-full py-3.5 px-7 w-52 flex justify-center items-center text-gray-900 font-semibold mx-auto transition-all duration-300 hover:bg-gray-100"
+                    className="md:text-base text-[10px] cursor-pointer border border-gray-300 shadow-sm rounded-full py-3.5 px-7 w-52 flex justify-center items-center text-gray-900 font-semibold mx-auto transition-all duration-300 hover:bg-gray-100"
                 >
                     View All
                 </Link>

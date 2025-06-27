@@ -29,15 +29,15 @@ useEffect(() => {
       if (currentUser) {
         setUser(currentUser);
         const userInfo = { email: currentUser.email };
-        console.log(userInfo);
+        // console.log(userInfo);
   
         try {
           const res = await axiosPublic.post("/jwt", userInfo);
-          console.log("JWT Response:", res.data);
+          // console.log("JWT Response:", res.data);
           if (res.data.token) {
             // console.log(res);
             localStorage.setItem("access-token", res.data.token);
-            console.log("Token saved:", res.data.token);
+            // console.log("Token saved:", res.data.token);
           }
           else {
             console.error("No token found in response");

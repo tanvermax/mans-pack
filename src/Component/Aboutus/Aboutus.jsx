@@ -16,7 +16,7 @@ const Aboutus = () => {
             </div>
             <div className=' lg:p-10 mt-10'>
                 <h2 className='border-l-4 border-blue-600  lg:text-5xl text-2xl px-6 font-bold'>About Us</h2>
-                <p className='py-5 lg:text-base  text-xs'>Mans Printing and Packaging is a packaging manufacturing company located in Dhaka, Bangladesh. Our mission is to provide customized and sustainable packaging solutions to businesses of all sizes.
+                <p className='py-5 lg:text-base  text-[10px]'>Mans Printing and Packaging is a packaging manufacturing company located in Dhaka, Bangladesh. Our mission is to provide customized and sustainable packaging solutions to businesses of all sizes.
 
                     <br /> <br /> Established in 2020, we are a young and ambitious company with a passion for innovation and excellence. we offer a wide range of carton box packaging solutions for e-commerce, food, and industrial applications. <br /> <br />As a carton box manufacturing company, we are provider of customized, sustainable, and high-quality packaging solutions and dedicated to serving businesses of all sizes in Dhaka and beyond. And we pride ourselves on our ability to provide fast and reliable service to our clients. </p>
             </div>

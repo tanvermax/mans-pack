@@ -38,7 +38,7 @@ const Banner = () => {
         className="mySwiper"
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide  key={index}>
             <div className="relative   lg:h-[700px]">
               <img src={slide.image} alt={slide.heading} className="w-full h-full object-cover blur-[3px] " />
               <div className="absolute inset-0 flex flex-col items-center justify-center  bg-opacity-50 text-white p-4">

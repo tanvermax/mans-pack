@@ -70,13 +70,13 @@ const BannerEdit = () => {
                                     <p className="text-gray-700">{item.description}</p>
                                 </div>
                                 <div className="absolute inset-0 m-auto rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                                    <Link className='bg-blue-300 p-2 m-2' to={`/dashboard/banner/${item._id}`}>
+                                    <Link className='bg-blue-300 p-2 m-2 rounded-xl' to={`/dashboard/banner/${item._id}`}>
                                         Edit
                                     </Link>
                                     {/* Fixed: Pass function reference instead of calling immediately */}
                                     <button 
                                         onClick={() => handleDelete(item._id)} 
-                                        className='bg-red-600 p-2 text-white'
+                                        className='bg-[#8d2032] rounded-xl p-2 text-white'
                                     >
                                         Delete
                                     </button>

@@ -23,6 +23,7 @@ import Products from "../Pages/EnquiryCart/Products";
 import PrivateRoute from "../Hook/PrivateRoute";
 import Dynamicbanner from "../Admin/Dynamicbanner/Dynamicbanner";
 import UpdateBanner from "../Admin/Dynamicbanner/UpdateBanner";
+import DynamicPortfolio from "../Admin/Dynamicportfolio/DynamicPortfolio";
 // import PrivateRoute from './PrivateRoute';
 
 export const Routs = createBrowserRouter([
@@ -49,6 +50,9 @@ export const Routs = createBrowserRouter([
                         path:"banner/:id",
                         element:<UpdateBanner/>,
                         loader: ({params}) => fetch(`https://man-pack-server.vercel.app/banner/${params.id}`),
+                    },{
+                        path:"/dashboard/portfolio",
+                        element:<DynamicPortfolio/>
                     },
                     {
                         path:"dynamicbanner",

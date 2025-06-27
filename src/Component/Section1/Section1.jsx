@@ -35,15 +35,15 @@ const Section1 = () => {
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className="bg-white border border-blue-400 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow content-center duration-300 text-center"
+            className="bg-white border border-blue-400 rounded-xl md:p-6 p-3 shadow-md hover:shadow-xl transition-shadow content-center duration-300 text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
           >
             <div className="text-4xl text-[#e69f06] w-10 mb-4 mx-auto">{feature.icon}</div>
-            <h3 className="lg:text-xl text-base font-semibold mb-2">{feature.title}</h3>
-            <p className="text-gray-600 text-xs lg:text-base">{feature.description}</p>
+            <h3 className="lg:text-xl text-[10px] font-semibold mb-2">{feature.title}</h3>
+            <p className="text-gray-600 text-[8px] lg:text-base">{feature.description}</p>
           </motion.div>
         ))}
       </div>

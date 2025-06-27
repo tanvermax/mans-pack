@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../Provider/useAuth';
 import useAxiosSecure from '../../Hook/useAxiosSecure';
 import { PiFlagBannerFoldDuotone } from 'react-icons/pi';
+import { CiImport } from 'react-icons/ci';
 
 const Dashitem = () => {
     const { user } = useAuth();
@@ -79,6 +80,10 @@ const Dashitem = () => {
                 <Link to={"/dashboard/dynamicbanner"} className='flex items-center lg:gap-4 gap-2 text-gray-600 hover:text-green-600 text-lg font-medium lg:px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300'>
                     <PiFlagBannerFoldDuotone className="text-2xl" />
                     Banner
+                </Link>
+                <Link to={"/dashboard/portfolio"} className='flex items-center lg:gap-4 gap-2 text-gray-600 hover:text-green-600 text-lg font-medium lg:px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300'>
+                <CiImport  className="text-2xl" />
+                    Portfolio
                 </Link>
             </nav>
         </div>

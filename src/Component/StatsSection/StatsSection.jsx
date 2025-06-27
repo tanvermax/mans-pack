@@ -40,14 +40,14 @@ const StatsSection = () => {
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center space-y-2">
             {stat.icon}
-            <div className="text-2xl font-bold">
+            <div className="lg:text-2xl font-bold">
               {inView ? (
                 <CountUp end={stat.number} duration={2} suffix={stat.suffix} />
               ) : (
                 `0${stat.suffix}`
               )}
             </div>
-            <div className="text-sm tracking-widest">{stat.label}</div>
+            <div className="md:text-sm text-[10px] tracking-widest">{stat.label}</div>
           </div>
         ))}
       </div>
