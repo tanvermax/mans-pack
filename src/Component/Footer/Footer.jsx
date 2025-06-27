@@ -90,7 +90,7 @@ const Footer = () => {
                 </div>
             </footer>
             <div className=' bg-[#1E293B]'>
-                <p className="md:px-40 text-[6px] md:text-[10px] lg:text-base lg:w-xl mx-auto text-gray-500 text-center md:text-left">&copy; 2025 Copyright by Mans Packaging | Developed by <a href="https://portfolio-e021a.web.app" target="_blank">tanver</a> </p>
+                <p className="md:px-40 text-[6px] md:text-[10px] lg:text-base lg:w-4xl mx-auto text-gray-500 text-center md:text-left">&copy; 2025 Copyright by Mans Packaging | Developed by <a href="https://portfolio-e021a.web.app" target="_blank">tanver</a> </p>
             </div>
         </div>
     );

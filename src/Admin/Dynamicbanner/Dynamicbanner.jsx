@@ -26,6 +26,7 @@ const Dynamicbanner = () => {
             .then(response => {
                 console.log("Data submitted successfully:", response.data);
                 toast.success("Banner Data submitted successfully!");
+                
             })
             .catch(error => {
                 console.error("Error submitting data:", error);

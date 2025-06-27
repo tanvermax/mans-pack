@@ -33,6 +33,7 @@ const UpdateBanner = () => {
             // console.log('Update successful:', response);
             if (response.status==200) {
                 toast.success("Update successful")
+              
             }
             // You might want to add a success message or redirect here
         } catch (error) {

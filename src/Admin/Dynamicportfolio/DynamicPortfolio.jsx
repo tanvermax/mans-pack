@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useaxiospublic from '../../Hook/useaxiospublic';
 import { toast } from 'react-toastify';
+import Dyportfolio from './Dyportfolio';
 
 const DynamicPortfolio = () => {
     const [fields, setFields] = useState([]);
@@ -28,7 +29,7 @@ const DynamicPortfolio = () => {
             setNewField({
                 type: '',
                 name: '',
-                alt: ''
+                alt: '',
             });
             axiospublic.post('/portfolio', newField)
                 .then(response => {
@@ -48,7 +49,7 @@ const DynamicPortfolio = () => {
 
 
     return (
-        <div className='bg-[#F3F4F6] h-full pt-20'>
+        <div className='bg-[#F3F4F6] h-full pt-20 px-5'>
             <div className=" w-2xl mx-auto bg-white p-5 rounded-2xl">
                 <h2 className="text-xl font-semibold mb-4">Add New Field</h2>
 
@@ -120,6 +121,9 @@ const DynamicPortfolio = () => {
                         </div>
                     </div>
                 )}
+            </div>
+            <div className='py-5'>
+                <Dyportfolio/>
             </div>
         </div>
     );

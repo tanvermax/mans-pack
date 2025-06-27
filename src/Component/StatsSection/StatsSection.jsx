@@ -7,7 +7,7 @@ const stats = [
         icon: <Briefcase className="w-8 h-8 " />,
         number: 25000,
         suffix: '+',
-        label: 'Production capacity: ',
+        label: 'Production capacity',
     },
     {
         icon: <Globe className="w-8 h-8 " />,
@@ -47,7 +47,7 @@ const StatsSection = () => {
                 `0${stat.suffix}`
               )}
             </div>
-            <div className="md:text-sm text-[10px] tracking-widest">{stat.label}</div>
+            <div className="md:text-base text-[10px] tracking-widest">{stat.label}</div>
           </div>
         ))}
       </div>
