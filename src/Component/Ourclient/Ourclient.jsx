@@ -73,7 +73,10 @@ const Ourclient = () => {
         { "id": 27, photoname: photo27 },
         { "id": 28, photoname: photo28 },
         { "id": 29, photoname: photo29 },
-        { "id": 30, photoname: photo30 },
+        {
+            "id": 30,
+            photoname: photo30
+        },
         { "id": 31, photoname: photo31 },
         { "id": 32, photoname: photo32 },
         { "id": 33, photoname: photo33 },
@@ -105,8 +108,8 @@ const Ourclient = () => {
                         {[...logos, ...logos].map((logo, index) => (
                             <motion.img
                                 whileHover={{ scale: 1.1 }}
-                                
-                               
+
+
                                 src={logo.photoname} alt="Client Logo" className="h-16 " />
                         ))}
                     </motion.div>

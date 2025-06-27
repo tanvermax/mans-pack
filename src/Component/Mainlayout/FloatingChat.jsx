@@ -23,7 +23,7 @@ const FloatingChat = () => {
         </div>
       )}
       <button
-        className="animate-bounce bg-gray-800 p-4 rounded-full text-white shadow-lg"
+        className="animate-bounce bg-[#25AAE1] p-4 rounded-full text-[#ffffff] shadow-2xl"
         onClick={() => setOpen(!open)}
       >
         <FaComment className="" size={28} />

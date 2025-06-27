@@ -6,6 +6,7 @@ import useAuth from '../../Provider/useAuth';
 import useAxiosSecure from '../../Hook/useAxiosSecure';
 import { PiFlagBannerFoldDuotone } from 'react-icons/pi';
 import { CiImport } from 'react-icons/ci';
+import { BsClipboardCheck } from 'react-icons/bs';
 
 const Dashitem = () => {
     const { user } = useAuth();
@@ -34,10 +35,10 @@ const Dashitem = () => {
                 {
                     userData ? (
                         <>
-                            <FaRegUserCircle className="lg:text-5xl text-3xl text-gray-600 mb-2" />
+                            <FaRegUserCircle className="lg:text-5xl text-3xl  mb-2 text-[#25AAE1]" />
                             <p className="text-lg font-semibold text-gray-800">{userData.displayName}</p>
                             <p className="lg:text-sm text-[10px]  text-gray-500">{userData.email}</p>
-                            <p className="text-sm lg:text-sm text-[10px] text-green-500 font-bold mt-1">Role: {userData.role}</p>
+                            <p className="text-sm lg:text-sm text-[10px] text-[#25AAE1] font-bold mt-1">Role: {userData.role}</p>
                         </>
                     ) : (
                         <>
@@ -58,7 +59,7 @@ const Dashitem = () => {
                     to="/dashboard/adminhome"
                     className="flex items-center gap-4 text-gray-600 hover:text-green-600 text-lg font-medium lg:px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300"
                 >
-                    <SiHomebridge className="text-2xl" />
+                    <SiHomebridge className="text-2xl text-[#25AAE1]" />
                     Home
                 </Link>
 
@@ -66,7 +67,7 @@ const Dashitem = () => {
                     to="/dashboard/itemdetails"
                     className="flex items-center gap-4 text-gray-600 hover:text-green-600 text-lg font-medium px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300"
                 >
-                    <FaThList className="text-2xl" />
+                    <FaThList className="text-2xl text-[#25AAE1]" />
                     Post
                 </Link>
 
@@ -74,16 +75,20 @@ const Dashitem = () => {
                     to="/dashboard/userdetails"
                     className="flex items-center gap-4 text-gray-600 hover:text-green-600 text-lg font-medium px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300"
                 >
-                    <FaRegUserCircle className="text-2xl" />
+                    <FaRegUserCircle className="text-2xl text-[#25AAE1]" />
                     User
                 </Link>
                 <Link to={"/dashboard/dynamicbanner"} className='flex items-center lg:gap-4 gap-2 text-gray-600 hover:text-green-600 text-lg font-medium lg:px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300'>
-                    <PiFlagBannerFoldDuotone className="text-2xl" />
+                    <PiFlagBannerFoldDuotone className="text-2xl text-[#25AAE1]" />
                     Banner
                 </Link>
                 <Link to={"/dashboard/portfolio"} className='flex items-center lg:gap-4 gap-2 text-gray-600 hover:text-green-600 text-lg font-medium lg:px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300'>
-                <CiImport  className="text-2xl" />
+                <CiImport  className="text-2xl text-[#25AAE1] " />
                     Portfolio
+                </Link>
+                <Link to={"/dashboard/clinet"} className='flex items-center lg:gap-4 gap-2 text-gray-600 hover:text-green-600 text-lg font-medium lg:px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300'>
+                <BsClipboardCheck  className="text-2xl  text-[#25AAE1]" />
+                    Client
                 </Link>
             </nav>
         </div>

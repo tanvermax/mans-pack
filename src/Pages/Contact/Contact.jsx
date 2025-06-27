@@ -42,7 +42,7 @@ const Contact = () => {
                           />
                         </svg>
                         <h5 className="text-black text-base font-normal leading-6 ml-5">
-                          470-601-1911
+                        +8801787-108216
                         </h5>
                       </a>
                       <a href="#" className="flex items-center mb-6">
@@ -61,7 +61,7 @@ const Contact = () => {
                           />
                         </svg>
                         <h5 className="text-black text-base font-normal leading-6 ml-5">
-                          Pagedone1234@gmail.com
+                        manspacking@gmail.com
                         </h5>
                       </a>
                       <a href="#" className="flex items-center">
@@ -79,7 +79,7 @@ const Contact = () => {
                           />
                         </svg>
                         <h5 className="text-black text-base font-normal leading-6 ml-5">
-                          654 Sycamore Avenue, Meadowville, WA 76543
+                        Sonir Akhra, Midhra bari Road Jatrabari, Dhaka-1362
                         </h5>
                       </a>
                     </div>

@@ -24,6 +24,7 @@ import PrivateRoute from "../Hook/PrivateRoute";
 import Dynamicbanner from "../Admin/Dynamicbanner/Dynamicbanner";
 import UpdateBanner from "../Admin/Dynamicbanner/UpdateBanner";
 import DynamicPortfolio from "../Admin/Dynamicportfolio/DynamicPortfolio";
+import Clinetdynamic from "../Admin/Clinets/Clinetdynamic";
 // import PrivateRoute from './PrivateRoute';
 
 export const Routs = createBrowserRouter([
@@ -53,6 +54,11 @@ export const Routs = createBrowserRouter([
                     },{
                         path:"/dashboard/portfolio",
                         element:<DynamicPortfolio/>
+                    },
+                    
+                    {
+                        path:"/dashboard/clinet",
+                        element:<Clinetdynamic/>
                     },
                     {
                         path:"dynamicbanner",
