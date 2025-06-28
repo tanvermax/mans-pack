@@ -66,7 +66,7 @@ const Newspart = () => {
     if (error) return <div>Error: {error}</div>;
 
     return (
-        <section className="py-24 overflow-x-hidden">
+        <section className="md:py-24 py-10 overflow-x-hidden">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <h2 className="font-manrope text-2xl lg:text-4xl font-bold text-gray-900 text-center mb-14">
                     Our popular blogs
@@ -88,7 +88,7 @@ const Newspart = () => {
                                     <img
                                         src={newsdata.photoUrl}
                                         alt="Harsh image"
-                                        className="rounded-lg lg:h-100 h-80 mx-auto object-cover"
+                                        className="rounded-2xl lg:h-100 h-60 w-full p-2 mx-auto"
                                     />
                                     <div className="block p-5">
                                         <h4 className="text-gray-900 lg:text-3xl text-base my-4 font-semibold  md:leading-8 ">

@@ -35,7 +35,7 @@ const StatsSection = () => {
 
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
   return (
-    <div ref={ref} className=" bg-blue-900 text-white py-20">
+    <div ref={ref} className=" bg-[#10182B] text-white py-20">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center space-y-2">
