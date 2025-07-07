@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import EditClinet from './EditClinet';
 import useaxiospublic from '../../Hook/useaxiospublic';
 import { toast } from 'react-toastify';
@@ -6,23 +6,40 @@ import { toast } from 'react-toastify';
 const ClientDynamic = () => {
     const [imageUrl, setImageUrl] = useState('');
     const [altText, setAltText] = useState('');
+    const [clients, setClients] = useState([]);
     const axiosPublic = useaxiospublic();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Submitted:', { imageUrl, altText });
-        const formdata = { imageUrl, altText }
-        axiosPublic.post('/client', formdata)
-            .then(response => {
-                console.log("client Data submitted successfully:", response.data);
-                toast.success("client Data submitted successfully!");
+    const fetchClients = async () => {
+        try {
+            const res = await axiosPublic.get('/client');
+            setClients(res.data);
+        } catch (err) {
+            console.error("Error fetching client data:", err);
+        }
+    };
 
-            })
-            .catch(error => {
-                console.error("Error submitting client data:", error);
-                toast.error("Failed to submit client Data.");
-            });
-        // Add your submit logic here
+    useEffect(() => {
+        fetchClients();
+    }, []);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formdata = { imageUrl, altText };
+
+        try {
+            const response = await axiosPublic.post('/client', formdata);
+            if (response.data) {
+                toast.success("Client data submitted successfully!");
+                fetchClients(); // ✅ Refresh list after adding
+                setImageUrl('');
+                setAltText('');
+            } else {
+                toast.error("Failed to submit client data.");
+            }
+        } catch (error) {
+            console.error("Error submitting client data:", error);
+            toast.error("Failed to submit client data.");
+        }
     };
 
     return (
@@ -38,8 +55,8 @@ const ClientDynamic = () => {
                         id="imageUrl"
                         value={imageUrl}
                         onChange={(e) => setImageUrl(e.target.value)}
-                        placeholder="Enter Clinet image URL"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter Client image URL"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                 </div>
                 <div className="mb-4">
@@ -51,8 +68,8 @@ const ClientDynamic = () => {
                         id="altText"
                         value={altText}
                         onChange={(e) => setAltText(e.target.value)}
-                        placeholder="Enter alt/Clinet text (company name)"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter alt/Client text (company name)"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                 </div>
                 <button
@@ -71,9 +88,9 @@ const ClientDynamic = () => {
                     </div>
                 )}
             </div>
-            <div>
-                <EditClinet />
-            </div>
+
+            {/* ✅ Pass data and fetch function to EditClinet */}
+            <EditClinet data={clients} refresh={fetchClients} />
         </div>
     );
 };
