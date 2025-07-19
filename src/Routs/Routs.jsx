@@ -25,6 +25,7 @@ import Dynamicbanner from "../Admin/Dynamicbanner/Dynamicbanner";
 import UpdateBanner from "../Admin/Dynamicbanner/UpdateBanner";
 import DynamicPortfolio from "../Admin/Dynamicportfolio/DynamicPortfolio";
 import Clinetdynamic from "../Admin/Clinets/Clinetdynamic";
+import DyService from "../Admin/DyService/DyService";
 // import PrivateRoute from './PrivateRoute';
 
 export const Routs = createBrowserRouter([
@@ -39,7 +40,7 @@ export const Routs = createBrowserRouter([
                     {
                         path: 'itemdetails',
                         element: <ItemDetails></ItemDetails>,
-                        loader: ()=>fetch("https://man-pack-server.vercel.app/newspost")
+                        loader: () => fetch("https://man-pack-server.vercel.app/newspost")
                     },
                     {
                         path: "userdetails",
@@ -48,20 +49,21 @@ export const Routs = createBrowserRouter([
 
                     },
                     {
-                        path:"banner/:id",
-                        element:<UpdateBanner/>,
-                        loader: ({params}) => fetch(`https://man-pack-server.vercel.app/banner/${params.id}`),
-                    },{
-                        path:"/dashboard/portfolio",
-                        element:<DynamicPortfolio/>
-                    },
-                    
-                    {
-                        path:"/dashboard/clinet",
-                        element:<Clinetdynamic/>
+                        path: "banner/:id",
+                        element: <UpdateBanner />,
+                        loader: ({ params }) => fetch(`https://man-pack-server.vercel.app/banner/${params.id}`),
                     },
                     {
-                        path:"dynamicbanner",
+                        path: "/dashboard/portfolio",
+                        element: <DynamicPortfolio />
+                    },
+
+                    {
+                        path: "/dashboard/clinet",
+                        element: <Clinetdynamic />
+                    },
+                    {
+                        path: "dynamicbanner",
                         element: <Dynamicbanner></Dynamicbanner>
                     },
                     {
@@ -69,9 +71,14 @@ export const Routs = createBrowserRouter([
                         element: <Adminhome></Adminhome>
                     },
                     {
+                        path: "serive",
+                        element: <DyService/>
+                    },
+                    {
                         path: "sales",
                         element: <SalesAnalytics></SalesAnalytics>
-                    }
+                    },
+
                 ],
                 errorElement: <ErrorPage></ErrorPage>
             }, {
@@ -119,7 +126,7 @@ export const Routs = createBrowserRouter([
                 errorElement: <ErrorPage></ErrorPage>
             },
             {
-                path: "aboutus",
+                path: "about-us",
                 element: <Aboutus></Aboutus>,
                 errorElement: <ErrorPage></ErrorPage>
             },

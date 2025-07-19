@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaRegUserCircle, FaThList } from 'react-icons/fa';
+import { FaRegUserCircle, FaSellsy, FaThList } from 'react-icons/fa';
 import { SiHomebridge } from "react-icons/si";
 import { Link } from 'react-router-dom';
 import useAuth from '../../Provider/useAuth';
@@ -7,6 +7,8 @@ import useAxiosSecure from '../../Hook/useAxiosSecure';
 import { PiFlagBannerFoldDuotone } from 'react-icons/pi';
 import { CiImport } from 'react-icons/ci';
 import { BsClipboardCheck } from 'react-icons/bs';
+import { MdHomeRepairService } from "react-icons/md";
+
 
 const Dashitem = () => {
     const { user } = useAuth();
@@ -90,6 +92,16 @@ const Dashitem = () => {
                 <BsClipboardCheck  className="text-2xl  text-[#25AAE1]" />
                     Client
                 </Link>
+                
+                <Link to={"/dashboard/serive"} className='flex items-center lg:gap-4 gap-2 text-gray-600 hover:text-green-600 text-lg font-medium lg:px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300'>
+                <MdHomeRepairService  className="text-2xl  text-[#25AAE1]" />
+                    Service
+                </Link>
+                <Link to={"/dashboard/sales"} className='flex items-center lg:gap-4 gap-2 text-gray-600 hover:text-green-600 text-lg font-medium lg:px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300'>
+                <FaSellsy  className="text-2xl  text-[#25AAE1]" />
+                    sales
+                </Link>
+                
             </nav>
         </div>
     );

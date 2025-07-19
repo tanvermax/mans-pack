@@ -44,7 +44,7 @@ const ClientDynamic = () => {
 
     return (
         <div className='pt-20 bg-[#F3F4F6] h-full'>
-            <div className="max-w-md mx-auto p-6 bg-[#25AAE1] rounded-lg shadow-md">
+            <div className="md:max-w-md  mx-auto p-6 bg-[#25AAE1] rounded-lg shadow-md">
                 <h2 className="text-2xl font-bold mb-4 text-white">Image Input</h2>
                 <div className="mb-4">
                     <label htmlFor="imageUrl" className="block text-sm font-medium text-white mb-1">
@@ -60,7 +60,7 @@ const ClientDynamic = () => {
                     />
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="altText" className="block text-sm font-medium text-white mb-1">
+                    <label htmlFor="altText" className="block lg:text-sm text-[8px] font-medium text-white mb-1">
                         Alt Text
                     </label>
                     <input

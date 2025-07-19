@@ -33,7 +33,7 @@ const EditClinet = ({ data, refresh }) => {
     return (
         <div className='py-5 px-6'>
             <p className='font-semibold'>Total client : {data.length}</p>
-            <div className='grid grid-cols-10 gap-4'>
+            <div className='grid lg:grid-cols-7 md:grid-cols-5 grid-cols-3 gap-4'>
                 {
                     data.map((item) => (
                         <div
@@ -46,7 +46,7 @@ const EditClinet = ({ data, refresh }) => {
                                     alt={item.altText}
                                     className="rounded"
                                 />
-                                <p className="text-gray-700">Alt text: {item.altText}</p>
+                                <p className="text-gray-700 md:text-base text-[8px]" >Alt text: {item.altText}</p>
                             </div>
                             <div className="absolute inset-0 m-auto rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
                                 <button 
