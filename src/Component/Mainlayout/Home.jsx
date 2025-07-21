@@ -12,6 +12,7 @@ const Newspart = React.lazy(() => import('../Newspaert/Newspart'));
 const StatsSection = React.lazy(() => import('../StatsSection/StatsSection'));
 
 const Home = () => {
+    
     useEffect(() => {
         // Scroll to top on first render (refresh)
         window.scrollTo({
@@ -20,7 +21,7 @@ const Home = () => {
         });
     }, []);
 
-    
+
     return (
         <div>
             <Helmet>

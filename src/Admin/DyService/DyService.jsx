@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useaxiospublic from '../../Hook/useaxiospublic';
+import DyServiceEdit from './DyserviceEdit';
 
 
 const DyService = ({ serviceToEdit, onSuccess, onCancel }) => {
@@ -73,8 +74,9 @@ const DyService = ({ serviceToEdit, onSuccess, onCancel }) => {
   };
 
   return (
-    <div className="max-w-md mt-5 mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">
+    <div className=" bg-white ">
+     <div className='w-10/12 mx-auto bg-blue-50 p-10'>
+     <h2 className="text-2xl font-bold mb-6 text-gray-800">
         {serviceToEdit ? 'Edit Service' : 'Add New Service'}
       </h2>
       
@@ -152,6 +154,8 @@ const DyService = ({ serviceToEdit, onSuccess, onCancel }) => {
           </button>
         </div>
       </form>
+     </div>
+      <DyServiceEdit/>
     </div>
   );
 };
