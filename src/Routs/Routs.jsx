@@ -40,43 +40,52 @@ export const Routs = createBrowserRouter([
                     {
                         path: 'itemdetails',
                         element: <ItemDetails></ItemDetails>,
-                        loader: () => fetch("https://man-pack-server.vercel.app/newspost")
+                        loader: () => fetch("https://man-pack-server.vercel.app/newspost"),
+                         errorElement:<ErrorPage/>
                     },
                     {
                         path: "userdetails",
                         element: <UserDetails></UserDetails>,
                         loader: () => fetch("https://man-pack-server.vercel.app/user"),
+                         errorElement:<ErrorPage/>
 
                     },
                     {
                         path: "banner/:id",
                         element: <UpdateBanner />,
                         loader: ({ params }) => fetch(`https://man-pack-server.vercel.app/banner/${params.id}`),
+                         errorElement:<ErrorPage/>
                     },
                     {
                         path: "/dashboard/portfolio",
-                        element: <DynamicPortfolio />
+                        element: <DynamicPortfolio />,
+                        errorElement:<ErrorPage/>
                     },
 
                     {
                         path: "/dashboard/clinet",
-                        element: <Clinetdynamic />
+                        element: <Clinetdynamic />,
+                        errorElement:<ErrorPage/>
                     },
                     {
                         path: "dynamicbanner",
-                        element: <Dynamicbanner></Dynamicbanner>
+                        element: <Dynamicbanner></Dynamicbanner>,
+                        errorElement:<ErrorPage/>
                     },
                     {
                         path: "adminhome",
-                        element: <Adminhome></Adminhome>
+                        element: <Adminhome></Adminhome>,
+                        errorElement:<ErrorPage/>
                     },
                     {
                         path: "serive",
-                        element: <DyService/>
+                        element: <DyService/>,
+                        errorElement:<ErrorPage/>
                     },
                     {
                         path: "sales",
-                        element: <SalesAnalytics></SalesAnalytics>
+                        element: <SalesAnalytics></SalesAnalytics>,
+                        errorElement:<ErrorPage/>
                     },
 
                 ],
@@ -126,7 +135,7 @@ export const Routs = createBrowserRouter([
                 errorElement: <ErrorPage></ErrorPage>
             },
             {
-                path: "about-us",
+                path: "aboutus",
                 element: <Aboutus></Aboutus>,
                 errorElement: <ErrorPage></ErrorPage>
             },

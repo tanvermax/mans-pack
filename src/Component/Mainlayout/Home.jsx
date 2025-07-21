@@ -1,29 +1,33 @@
-import React from 'react';
-import Banner from '../Banner/Banner';
-import Section1 from '../Section1/Section1';
-import Aboutus from '../Aboutus/Aboutus';
-import Ourservice from '../Ourservice/Ourservice';
-import Amessage from '../Amessage/Amessage';
-import Ourclient from '../Ourclient/Ourclient';
-import Newspart from '../Newspaert/Newspart';
+import React, { Suspense } from 'react';
 import { Helmet } from 'react-helmet';
-import StatsSection from '../StatsSection/StatsSection';
+import Loading from '../Loading';
+
+const Banner = React.lazy(() => import('../Banner/Banner'));
+const Section1 = React.lazy(() => import('../Section1/Section1'));
+const Aboutus = React.lazy(() => import('../Aboutus/Aboutus'));
+const Ourservice = React.lazy(() => import('../Ourservice/Ourservice'));
+const Amessage = React.lazy(() => import('../Amessage/Amessage'));
+const Ourclient = React.lazy(() => import('../Ourclient/Ourclient'));
+const Newspart = React.lazy(() => import('../Newspaert/Newspart'));
+const StatsSection = React.lazy(() => import('../StatsSection/StatsSection'));
 
 const Home = () => {
     return (
         <div>
-             <Helmet>
+            <Helmet>
                 <meta charSet="utf-8" />
                 <title>Mans Packaging-Packaging Manufacturer in Bangladesh.</title>
             </Helmet>
-            <Banner></Banner>
-            <Section1></Section1>
-            <Aboutus></Aboutus>
-            <Ourservice></Ourservice>
-            <Newspart></Newspart>
-            <Amessage></Amessage>
-            <StatsSection></StatsSection>
-            <Ourclient></Ourclient>
+            <Suspense fallback={<Loading />}>
+                <Banner />
+                <Section1 />
+                <Aboutus />
+                <Ourservice />
+                <Newspart />
+                <Amessage />
+                <StatsSection />
+                <Ourclient />
+            </Suspense>
         </div>
     );
 };

@@ -1,37 +1,26 @@
-import React from 'react';
-import photo1 from "./../../../src/assets/service1.png"
-import photo2 from "./../../../src/assets/servce2.png"
-import photo3 from "./../../../src/assets/service3.png"
-import photo4 from "./../../../src/assets/service4.png"
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import useaxiospublic from '../../Hook/useaxiospublic';
 
 const Ourservice = () => {
-    const data = [
-        {
-            id: 1,
-            service: photo1,
-            heading: "Ecommerce Packaging",
-            descritpion: "Transform your online business with our premium E-commerce Packaging solution."
-        },
-        {
-            id: 2,
-            service: photo2,
-            heading: "Industrial Packaging",
-            descritpion: "Revolutionize your industrial packaging with our durable and customizable solutions."
+
+    const axiosPublic = useaxiospublic();
+
+    const [sata, setData] = useState([]);
+    const fetchClients = async () => {
+        try {
+            const res = await axiosPublic.get('/service');
+            setData(res.data);
+        } catch (err) {
+            console.error("Error fetching client data:", err);
         }
-        , {
-            id: 3,
-            service: photo3,
-            heading: "Food Packaging",
-            descritpion: "Protect and preserve your food with our innovative food packaging solutions."
-        },
-        {
-            id: 4,
-            service: photo4,
-            heading: "garments Packaging",
-            descritpion: "Elevate your garment packaging with our premium and sustainable options."
-        }
-    ]
+    };
+
+    useEffect(() => {
+        fetchClients();
+    }, []);
+
+    // console.log(sata)
     return (
         <div className='bg-gray-100'>
             <div className='lg:w-11/12 mx-auto place-items-center lg:py-10 py-5'>
@@ -39,15 +28,15 @@ const Ourservice = () => {
                 <p className='lg:text-xl text-xs text-gray-700 pb-10'>Packaging We Offer</p>
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 '>
                     {
-                        data.map(d =>
+                        sata.map((d,index) =>
                             <motion.div
                                 whileHover={{ scale: 1.1 }}
 
 
-                                key={d.id} className=' place-content-center place-items-center p-5'>
+                                key={index} className=' place-content-center place-items-center p-5'>
                                 <img className='rounded-xl p-1 lg:w-[310px] w-[160px] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]' src={d.service} alt="" />
                                 <h3 className='lg:py-5 py-3 lg:text-2xl font-semibold'>{d.heading}</h3>
-                                <p className='text-center text-xs lg:text-base text-gray-600'>{d.descritpion}</p>
+                                <p className='text-center text-xs lg:text-base text-gray-600'>{d.description}</p>
 
                             </motion.div>)
                     }

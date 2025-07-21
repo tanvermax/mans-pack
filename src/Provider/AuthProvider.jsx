@@ -2,8 +2,8 @@ import { createUserWithEmailAndPassword, deleteUser, getAuth, GoogleAuthProvider
 import React, { createContext, useEffect, useState } from 'react';
 import { app } from '../Firebase/Firebase.init';
 import useaxiospublic from '../Hook/useaxiospublic';
+import { AuthContext } from './auth-context';
 
-export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
 

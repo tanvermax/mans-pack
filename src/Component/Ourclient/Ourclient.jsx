@@ -107,7 +107,7 @@ const Ourclient = () => {
                     >
                         {[...logos, ...logos].map((logo, index) => (
                             <motion.img
-                                whileHover={{ scale: 1.1 }}
+                                whileHover={{ scale: 1.1 }} key={index}
 
 
                                 src={logo.photoname} alt="Client Logo" className="h-16 " />
