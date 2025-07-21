@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Loading from '../Loading';
+import HomePortfolio from '../Potfoliohome/HomePortfolio';
 
 const Banner = React.lazy(() => import('../Banner/Banner'));
 const Section1 = React.lazy(() => import('../Section1/Section1'));
@@ -33,6 +34,7 @@ const Home = () => {
                 <Section1 />
                 <Aboutus />
                 <Ourservice />
+                <HomePortfolio/>
                 <Newspart />
                 <Amessage />
                 <StatsSection />
