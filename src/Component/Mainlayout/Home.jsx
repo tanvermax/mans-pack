@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Loading from '../Loading';
 
@@ -12,6 +12,15 @@ const Newspart = React.lazy(() => import('../Newspaert/Newspart'));
 const StatsSection = React.lazy(() => import('../StatsSection/StatsSection'));
 
 const Home = () => {
+    useEffect(() => {
+        // Scroll to top on first render (refresh)
+        window.scrollTo({
+          top: 0,
+          behavior: 'auto', // Or 'smooth' if you prefer
+        });
+    }, []);
+
+    
     return (
         <div>
             <Helmet>
