@@ -8,12 +8,14 @@ import Footer from '../Footer/Footer';
 import { Link, Outlet } from 'react-router-dom';
 import FloatingChat from './FloatingChat';
 import { ToastContainer } from 'react-toastify';
+import ScrollToTop from '../ScrollToTop';
 
 const Mainlayout = () => {
     console.log("Website developed by shafayet hossain tanveer- https://portfolio-e021a.web.app");
     // const nodeaderfooter = location.pathname.includes('dashboard')
     return (
         <div className=' '>
+             <ScrollToTop/>
             <ToastContainer></ToastContainer>
             <div className="border-b-[1px]">
                 <div className="">
