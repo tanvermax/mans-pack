@@ -21,7 +21,8 @@ const Adminhome = () => {
     const news = {
       headline: data.headline,
       description: data.description,
-      photoUrl: data.photoUrl, // Save the URL too if you want
+      photoUrl: data.photoUrl,
+      createdAt: new Date(),
     }
 
     try {
