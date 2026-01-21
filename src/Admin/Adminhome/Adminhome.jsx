@@ -49,7 +49,7 @@ const Adminhome = () => {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white mb-6 rounded-2xl shadow-xl p-8 w-full max-w-lg">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Upload Your Photo (by URL)
+          Upload Blog
         </h1>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           
@@ -86,7 +86,7 @@ const Adminhome = () => {
           {/* Headline */}
           <div>
             <label htmlFor="headline" className="block text-sm font-medium text-gray-700 mb-1">
-              Headline
+              Title
             </label>
             <input
               id="headline"
@@ -119,7 +119,7 @@ const Adminhome = () => {
               {...register('description', {
                 required: 'Description is required',
                 maxLength: {
-                  value: 500,
+                  value: 1500,
                   message: 'Description cannot exceed 500 characters',
                 },
               })}
