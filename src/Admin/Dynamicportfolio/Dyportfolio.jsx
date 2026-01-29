@@ -11,7 +11,7 @@ const Dyportfolio = () => {
     useEffect(() => {
         axiospublic.get("/portfolio")
             .then((res) => {
-                setData(res.data);
+                setData(res.data.reverse());
             })
             .catch((err) => {
                 console.error("Error fetching banner data:", err);

@@ -70,7 +70,7 @@ const Dashitem = () => {
                     className="flex items-center gap-4 text-gray-600 hover:text-green-600 text-lg font-medium px-4 py-2 rounded-lg hover:bg-green-50 transition duration-300"
                 >
                     <FaThList className="text-2xl text-[#25AAE1]" />
-                    Post
+                    Blog
                 </Link>
 
                 <Link

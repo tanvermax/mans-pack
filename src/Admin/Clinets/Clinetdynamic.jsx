@@ -12,7 +12,7 @@ const ClientDynamic = () => {
     const fetchClients = async () => {
         try {
             const res = await axiosPublic.get('/client');
-            setClients(res.data);
+            setClients(res.data.reverse());
         } catch (err) {
             console.error("Error fetching client data:", err);
         }
