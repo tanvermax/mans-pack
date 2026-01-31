@@ -55,7 +55,7 @@ const Dyportfolio = () => {
             <p className='py-3'>
                 Total data : {data.length}
             </p>
-            <div className='grid grid-cols-10 gap-3'>
+            <div className='grid grid-cols-4 gap-3'>
                 {
                     data.map((item, index) =>
                         <>
