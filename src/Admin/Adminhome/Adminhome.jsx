@@ -12,31 +12,34 @@ const Adminhome = () => {
 
   // Watch the photo URL input
   const photoUrl = watch('photoUrl');
+  const headline = watch('headline');
 
+
+  const createSlugPreview = (text) => {
+    return text ? text.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-') : '';
+  };
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    setError(null);
-    setSuccess(null);
-    
+
+    // Note: We don't send the slug from frontend, 
+    // the backend (updated above) will handle it for better security.
     const news = {
       headline: data.headline,
       description: data.description,
       photoUrl: data.photoUrl,
-      createdAt: new Date(),
     }
 
     try {
       const res = await axiosSecure.post('/newspost', news);
-      console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({
-          position: "top-end",
           icon: "success",
-          title: "Your work has been saved",
+          title: "Blog Published!",
+          text: `Slug: ${createSlugPreview(data.headline)}`,
           showConfirmButton: false,
-          timer: 1500
+          timer: 2000
         });
-        reset(); // Clear form after submit
+        reset();
       }
     } catch (err) {
       setError(err.message || 'An error occurred');
@@ -52,12 +55,13 @@ const Adminhome = () => {
           Upload Blog
         </h1>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          
+
           {/* Photo URL Input */}
           <div>
             <label htmlFor="photoUrl" className="block text-sm font-medium text-gray-700 mb-1">
               Photo URL
             </label>
+
             <input
               id="photoUrl"
               type="text"
@@ -85,9 +89,15 @@ const Adminhome = () => {
 
           {/* Headline */}
           <div>
+            {headline && (
+              <p className="mt-1 text-xs text-gray-500 italic">
+                URL Preview: /blog/{createSlugPreview(headline)}
+              </p>
+            )}
             <label htmlFor="headline" className="block text-sm font-medium text-gray-700 mb-1">
               Title
             </label>
+
             <input
               id="headline"
               type="text"
