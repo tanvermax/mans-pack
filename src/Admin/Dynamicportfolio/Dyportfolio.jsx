@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useaxiospublic from '../../Hook/useaxiospublic';
-import { Link } from 'react-router-dom';
+
 import Swal from 'sweetalert2';
 
 const Dyportfolio = () => {
@@ -8,45 +8,55 @@ const Dyportfolio = () => {
 
     const axiospublic = useaxiospublic();
 
-    useEffect(() => {
+     const fetchPortfolio = () => {
         axiospublic.get("/portfolio")
             .then((res) => {
                 setData(res.data.reverse());
             })
             .catch((err) => {
-                console.error("Error fetching banner data:", err);
+                console.error("Error fetching portfolio data:", err);
             });
-    }, [axiospublic])
+    };
 
 
-    const handleDelete =async (id) => {
-      Swal.fire({
-                 title: "Are you sure?",
-                 text: "This portfolio will be permanently deleted!",
-                 icon: "warning",
-                 showCancelButton: true,
-                 confirmButtonColor: "#d33",
-                 cancelButtonColor: "#3085d6",
-                 confirmButtonText: "Yes, delete!",
-             }).then(async (result) => {
-                 if (result.isConfirmed) {
-                     try {
-                         const response = await axiospublic.delete(`/portfolio/${id}`);
-                         console.log(response);
-                             console.log(response.data);
-                         if (response.data.success = true) {
-                             
-                             Swal.fire("Deleted!", "portfolio has been deleted.", "success");
-                             // Refresh the data after deletion
-                             const updatedData = data.filter(item => item._id !== id);
-                             setData(updatedData);
-                         }
-                     } catch (error) {
-                         console.error("Error deleting banner:", error);
-                         Swal.fire("Error!", "Failed to delete portfolio.", "error");
-                     }
-                 }
-             });
+    useEffect(() => {
+        fetchPortfolio();
+
+        const interval = setInterval(() => {
+            fetchPortfolio();
+        }, 3000); // auto update every 3 seconds
+
+        return () => clearInterval(interval);
+    }, [axiospublic]);
+
+    const handleDelete = async (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "This portfolio will be permanently deleted!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete!",
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    const response = await axiospublic.delete(`/portfolio/${id}`);
+                    console.log(response);
+                    console.log(response.data);
+                    if (response.data.success = true) {
+
+                        Swal.fire("Deleted!", "portfolio has been deleted.", "success");
+                        // Refresh the data after deletion
+                        const updatedData = data.filter(item => item._id !== id);
+                        setData(updatedData);
+                    }
+                } catch (error) {
+                    console.error("Error deleting banner:", error);
+                    Swal.fire("Error!", "Failed to delete portfolio.", "error");
+                }
+            }
+        });
     }
 
 
